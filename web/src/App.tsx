@@ -1,7 +1,11 @@
-import { Widget } from "./components/Widget";
+import { Header } from './components/Header';
+import { Widget } from './components/Widget';
 
 export function App() {
   return (
-    <Widget />
+    <div className="max-w-screen-lg mx-auto">
+      <Header />
+      <Widget />
+    </div>
   );
 }
