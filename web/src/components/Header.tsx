@@ -2,17 +2,16 @@ import { WhatsappLogo } from 'phosphor-react';
 
 import womanImageUrl from '../assets/woman.png';
 
-export function Header() {     
+export function Header() {
   return (
-    <header className="text-center bg-brand-200 h-[1080px]">
-      <div className="px-6 pt-10">
+    <header className="text-center bg-brand-200 h-[64rem] px-6 pt-10">
         <div>
-          <h4 className="text-sm text-brand-500">Boas-vindas a DoctorCare 👋</h4>
+          <h4 className="text-sm text-brand-500 mt-10">Boas-vindas a DoctorCare 👋</h4>
           <h1 className="mt-4 font-bold text-3xl text-brand-headline" >Assistência médica simplificada para todos</h1>
           <p className="mt-6 text-lg">Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a longo prazo.</p>
          
           <button className="mt-8 mx-auto bg-brand-500 text-brand-50 font-bold text-sm flex items-center justify-center gap-4 py-4 px-8 rounded-3xl">
-            <WhatsappLogo size={20}/>
+            <WhatsappLogo size={20} />
             Agende sua consulta
           </button>
 
@@ -36,7 +35,6 @@ export function Header() {
             <p className="text-brand-500">Anos no mercado</p>
           </div>
         </div>
-      </div>
     </header>
   );
 }
