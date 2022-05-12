@@ -4,6 +4,10 @@
 @tailwind components;
 @tailwind utilities;
 
+html {
+  @apply w-full h-full
+}
+
 body {
   @apply bg-brand-100 text-brand-paragraph;
   font-family: 'DM Sans', sans-serif;
