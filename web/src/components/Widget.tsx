@@ -6,12 +6,12 @@ import { WidgetForm } from './WidgetForm';
 export function Widget() {
 
   return (
-    <Popover className="absolute bottom-4 right-4 md:bottom-8 md:right-8 flex flex-col items-end">
+    <Popover className="fixed flex flex-col items-end bottom-4 right-4 md:bottom-8 md:right-8">
       <Popover.Panel>
         <WidgetForm />  
       </Popover.Panel>
 
-      <Popover.Button className="bg-brand-500 rounded-full px-3 h-12 text-white flex items-center group">
+      <Popover.Button className="flex items-center px-3 h-12 group bg-brand-500 rounded-full text-white ">
         <ChatTeardropDots className="w-6 h-6" />
 
         <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-500 ease-linear">

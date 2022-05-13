@@ -3,26 +3,42 @@ import { FacebookLogo, InstagramLogo, List, X, YoutubeLogo } from 'phosphor-reac
 
 import logoImageUrl from '../assets/logo.svg';
 import logoOnSurfaceUrl from '../assets/logoOnSurface.svg';
+import { Button } from './Button';
 
-export function NavBar() {
+interface NavBarProps {
+  menuIsOpen: boolean;
+  setMenuIsOpen: (data: boolean) => void;
+}
+
+export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
  const [offset, setOffset] = useState(0);
- const [menuIsOpen, setMenuIsOpen] = useState(false);
- const navRef = useRef<HTMLDivElement>(null);
+ const divRef = useRef<HTMLDivElement>(null);
 
   function setScroll() {
     setOffset(window.scrollY);
   };
+
+  function handleButtonList() {
+    setMenuIsOpen(!menuIsOpen);
+  }
+
+  function addStyle() {
+    divRef.current?.classList.add("bg-brand-500");
+    divRef.current?.getElementsByClassName("button-list")[0].classList.add("text-brand-50");
+  }
+
+  function removeStyle() {
+    divRef.current?.classList.remove("bg-brand-500");
+    divRef.current?.getElementsByClassName("button-list")[0].classList.remove("text-brand-50");
+  }
   
   useEffect(() => {
-    if(offset > 0) {
-      navRef.current?.classList.add("bg-brand-500");
-      navRef.current?.getElementsByClassName("button-list")[0].classList.add("text-brand-50");
-      
+    if(offset > 0 || menuIsOpen) {
+      addStyle()
     } else {
-      navRef.current?.classList.remove("bg-brand-500");
-      navRef.current?.getElementsByClassName("button-list")[0].classList.remove("text-brand-50");
+      removeStyle()
     }
-  }, [offset])
+  }, [offset, menuIsOpen])
 
   useEffect(() => {
     window.addEventListener("scroll", setScroll);
@@ -32,21 +48,62 @@ export function NavBar() {
   }, []);
 
   return (
-    <nav
-      ref={navRef} 
-      className="flex justify-between items-center w-full fixed px-6 py-4"
-    >
-      <a href="#">
-        <img src={offset > 0 ? logoOnSurfaceUrl : logoImageUrl } alt="Logo DoctorCare" />
-      </a>
+    <nav className="flex flex-col fixed">
+      <div ref={divRef} className="flex justify-between items-center w-screen px-6 py-4">
+        <a href="#">
+          <img 
+            src={offset > 0 || menuIsOpen ? logoOnSurfaceUrl : logoImageUrl } 
+            alt="Logo DoctorCare"
+          />
+        </a>
 
-      <button onClick={() => setMenuIsOpen(!menuIsOpen)}className="button-list text-brand-500">
-        {
-          menuIsOpen
-          ? <X size={20} weight={'bold'} />
-          : <List size={20} weight={'bold'} />
-        }
-      </button>
+        <button onClick={handleButtonList} className="button-list text-brand-500">
+          {
+            menuIsOpen
+            ? <X size={20} weight={'bold'} />
+            : <List size={20} weight={'bold'} />
+          }
+        </button>
+      </div>
+
+      {
+        menuIsOpen &&
+        <div 
+          style={{ height: `calc(${window.innerHeight}px - ${divRef.current?.clientHeight}px)` }}
+          className="flex flex-col items-center justify-around w-screen text-center bg-brand-500"
+        >
+          <div className="flex flex-col gap-10">
+            <ul className="flex flex-col gap-10 text-brand-50 text-2xl font-bold">
+              <li className="hover:opacity-80"><a href="#">Início</a></li>
+              <li className="hover:opacity-80"><a href="#">Serviços</a></li>
+              <li className="hover:opacity-80"><a href="#">Sobre</a></li>
+              <li className="hover:opacity-80"><a href="#">Depoimentos</a></li>
+            </ul>
+
+            <Button onSurface>
+              Agende sua consulta
+            </Button>
+          </div>
+
+          <ul className="flex gap-8 text-brand-50">
+            <li className="hover:opacity-80">
+              <a target="_blank" href="https://www.instagram.com">
+                <InstagramLogo size={24} weight={'bold'} />
+              </a>
+            </li>
+            <li className="hover:opacity-80">
+              <a target="_blank" href="https://www.facebook.com">
+                <FacebookLogo size={24} weight={'bold'} />
+              </a>
+            </li>
+            <li className="hover:opacity-80">
+              <a target="_blank" href="https://www.youtube.com">
+                <YoutubeLogo size={24} weight={'bold'} />
+              </a>
+            </li>
+          </ul>
+        </div>
+      }
     </nav>
   );
 }
