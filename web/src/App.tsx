@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import { NavBar } from './components/NavBar';
 import { Header } from './components/Header';
+import { Services } from './components/Services';
 import { Widget } from './components/Widget';
 
 export function App() {
@@ -14,6 +15,7 @@ export function App() {
         !menuIsOpen &&
         <>
           <Header />
+          <Services />
           <Widget />
         </>
       }
