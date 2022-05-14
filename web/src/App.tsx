@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { NavBar } from './components/NavBar';
 import { Header } from './components/Header';
 import { Services } from './components/Services';
+import { About } from './components/About';
 import { Widget } from './components/Widget';
 
 export function App() {
@@ -16,6 +17,7 @@ export function App() {
         <>
           <Header />
           <Services />
+          <About />
           <Widget />
         </>
       }

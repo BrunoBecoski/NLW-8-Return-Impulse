@@ -17,7 +17,8 @@ export function Header() {
           Agende sua consulta
         </Button>
       </div>
-      <img className="w-64 m-auto mt-16" 
+      <img 
+        className="w-64 m-auto mt-16" 
         src={womanImageUrl} 
         alt="Mulher negra de moletom verde sorrindo"
       />
