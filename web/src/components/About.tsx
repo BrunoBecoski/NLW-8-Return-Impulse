@@ -14,7 +14,7 @@ export function About() {
         </p>
 
         <img 
-          className="max-w-full" 
+          className="max-w-full"
           src={doctorImageUrl}
           alt="Doutor feliz segurando prancheta com pacientes"
         />

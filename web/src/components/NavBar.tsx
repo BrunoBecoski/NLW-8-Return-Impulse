@@ -31,6 +31,13 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
     divRef.current?.classList.remove("bg-brand-500");
     divRef.current?.getElementsByClassName("button-list")[0].classList.remove("text-brand-50");
   }
+
+  function handleContact() {
+    handleButtonList();
+    setTimeout(() => {
+      window.location.replace("/#contact");
+    }, 0);
+  }
   
   useEffect(() => {
     if(offset > 0 || menuIsOpen) {
@@ -80,7 +87,7 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
               <li className="hover:opacity-80"><a href="#">Depoimentos</a></li>
             </ul>
 
-            <Button onSurface>
+            <Button onClick={handleContact} onSurface>
               Agende sua consulta
             </Button>
           </div>
