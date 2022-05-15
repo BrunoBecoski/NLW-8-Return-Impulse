@@ -58,7 +58,8 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
     <nav className="flex flex-col fixed">
       <div ref={divRef} className="flex justify-between items-center w-screen px-6 py-4">
         <a href="#">
-          <img 
+          <img
+            className="h-[18px]"
             src={offset > 0 || menuIsOpen ? logoOnSurfaceUrl : logoImageUrl } 
             alt="Logo DoctorCare"
           />
