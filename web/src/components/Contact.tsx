@@ -1,7 +1,7 @@
 import { Button } from "./Button";
 import { EnvelopeSimple, MapPin, WhatsappLogo } from "phosphor-react";
 
-import manImageUrl from '../assets/man.png';
+import menImageUrl from '../assets/men.png';
 
 export function Contact() {
   return(
@@ -30,7 +30,7 @@ export function Contact() {
 
         <img 
           className="max-w-full"
-          src={manImageUrl} 
+          src={menImageUrl} 
           alt="Homem negro com moletom bege mexendo no celular e sorrindo"
         />
       </div>
