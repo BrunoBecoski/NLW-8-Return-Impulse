@@ -12,6 +12,15 @@ module.exports = {
           headline: '#212529',
           paragraph: '#495057',
         }
+      },
+      keyframes: {
+        scroll: {
+          '0%': { transform: 'translateX(40px)' },
+          '100%': { transform: 'translateX(-885px)' }
+        }
+      },
+      animation: {
+        'scroll': 'scroll 10s linear infinite'
       }
     }
   },
