@@ -55,7 +55,7 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
   }, []);
 
   return (
-    <nav className="flex flex-col fixed">
+    <nav className="flex flex-col fixed z-50">
       <div ref={divRef} className="flex justify-between items-center w-screen px-6 py-4">
         <a href="#">
           <img
