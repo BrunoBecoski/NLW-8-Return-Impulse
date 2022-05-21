@@ -1,5 +1,5 @@
+import { useRef, useState } from "react";
 import { Quotes } from "phosphor-react";
-import { useRef } from "react";
 
 interface CardProps {
   text: string;
@@ -8,7 +8,7 @@ interface CardProps {
 
 function Card({ text, client }: CardProps) {
   return(
-    <div className="p-8 flex flex-col gap-5 bg-brand-100 w-[calc(100vw_-_3rem)]">
+    <li className="p-8 flex flex-col gap-5 bg-brand-100 w-[calc(100vw_-_3rem)]">
       <Quotes className="text-brand-500" weight="fill" size={40} />
       <p>{text}</p>
       <div className="flex items-center gap-4 ">
@@ -19,21 +19,23 @@ function Card({ text, client }: CardProps) {
         />
         <p className="font-bold text-lg text-brand-500">{client}</p>
       </div>
-    </div>
+    </li>
   );
 }
 
 export function Depositions() {
   const carouselRef = useRef<HTMLDivElement>({} as HTMLDivElement);
+  const [cardListDots, setCardListDots] = useState([true, false, false, false]);
 
-  function click1() {
-    carouselRef.current.scrollLeft -= (carouselRef.current.offsetWidth + 70);
+  function scrollCard(index: number) {
+    const newCardListDots = [false, false, false, false];
+    newCardListDots[index] = true;
+
+    setCardListDots(newCardListDots);
+
+    carouselRef.current.getElementsByTagName("li")[index].scrollIntoView({block: "center", inline: "center"});
   }
   
-  function click2() {
-    carouselRef.current.scrollLeft += (carouselRef.current.offsetWidth + 70);
-  }
-   
   return (
     <section className="px-6 py-24 bg-brand-50 rounded"> 
       <header className="mb-14">
@@ -42,21 +44,34 @@ export function Depositions() {
       </header>
       
       <div ref={carouselRef}  className="flex items-center relative overflow-hidden scroll-smooth">
-        <div className="flex items-center gap-10">
+        <ul className="flex items-center gap-10">
           <Card 
-            text="UM Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+            text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
             client="Bruno Becoski"
           />
           <Card
-            text="DOIS Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+            text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
             client="Bruno Becoski"
           />
-        </div>
+          <Card 
+            text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+            client="Bruno Becoski"
+          />
+          <Card
+            text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+            client="Bruno Becoski"
+          />
+        </ul>
       </div>
 
       <div className="flex gap-2 justify-center mt-10">
-        <button onClick={click1} className="h-3 w-3 bg-brand-500 rounded-full"></button>
-        <button onClick={click2} className="h-3 w-3 bg-brand-100 rounded-full"></button>
+        {
+          cardListDots.map((card, index) => 
+            card
+            ? <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-500 rounded-full" />
+            : <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-200 rounded-full" />
+          )
+        }
       </div>
     </section>
   );
