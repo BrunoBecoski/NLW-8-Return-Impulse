@@ -32,10 +32,10 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
     divRef.current?.getElementsByClassName("button-list")[0].classList.remove("text-brand-50");
   }
 
-  function handleContact() {
+  function handleRedirect(value: string) {
     handleButtonList();
     setTimeout(() => {
-      window.location.replace("/#contact");
+      window.location.replace(`/#${value}`);
     }, 0);
   }
   
@@ -82,13 +82,21 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
         >
           <div className="flex flex-col gap-10">
             <ul className="flex flex-col gap-10 text-brand-50 text-2xl font-bold">
-              <li className="hover:opacity-80"><a href="#">Início</a></li>
-              <li className="hover:opacity-80"><a href="#">Serviços</a></li>
-              <li className="hover:opacity-80"><a href="#">Sobre</a></li>
-              <li className="hover:opacity-80"><a href="#">Depoimentos</a></li>
+              <li className="hover:opacity-80">
+                <a onClick={() => handleRedirect("home")}>Início</a>
+              </li>
+              <li className="hover:opacity-80">
+                <a onClick={() => handleRedirect("services")}>Serviços</a>
+              </li>
+              <li className="hover:opacity-80">
+                <a onClick={() => handleRedirect("depositions")}>Depoimentos</a>
+              </li>
+              <li className="hover:opacity-80">
+                <a onClick={() => handleRedirect("about")}>Sobre</a>
+              </li>
             </ul>
 
-            <Button onClick={handleContact} onSurface>
+            <Button onClick={() => handleRedirect("contact")} onSurface>
               Agende sua consulta
             </Button>
           </div>
