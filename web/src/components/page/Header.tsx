@@ -1,8 +1,8 @@
 import { WhatsappLogo } from 'phosphor-react';
 
-import { PrimaryButton } from './PrimaryButton';
+import { PrimaryButton } from '../common/PrimaryButton';
 
-import womanImageUrl from '../assets/woman.png';
+import womanImageUrl from '../../assets/woman.png';
 
 export function Header() {
   

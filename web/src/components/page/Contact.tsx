@@ -1,7 +1,8 @@
-import { PrimaryButton } from "./PrimaryButton";
-import { EnvelopeSimple, MapPin, WhatsappLogo } from "phosphor-react";
+import { EnvelopeSimple, MapPin, WhatsappLogo } from 'phosphor-react';
 
-import menImageUrl from '../assets/men.png';
+import { PrimaryButton } from '../common/PrimaryButton';
+
+import menImageUrl from '../../assets/men.png';
 
 export function Contact() {
   return(

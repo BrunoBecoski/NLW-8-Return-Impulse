@@ -1,6 +1,6 @@
 import { FacebookLogo, InstagramLogo, YoutubeLogo } from 'phosphor-react';
 
-import logoOnSurfaceUrl from '../assets/logoOnSurface.svg';
+import logoOnSurfaceUrl from '../../assets/logoOnSurface.svg';
 
 export function Footer() {
   return(

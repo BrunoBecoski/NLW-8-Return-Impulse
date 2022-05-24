@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { FacebookLogo, InstagramLogo, List, X, YoutubeLogo } from 'phosphor-react';
 
-import { PrimaryButton } from './PrimaryButton';
-import { SecondaryButton } from './SecondaryButton';
+import { PrimaryButton } from './common/PrimaryButton';
+import { SecondaryButton } from './common/SecondaryButton';
 
 import logoImageUrl from '../assets/logo.svg';
 import logoOnSurfaceUrl from '../assets/logoOnSurface.svg';

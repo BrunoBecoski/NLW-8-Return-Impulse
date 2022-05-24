@@ -1,5 +1,5 @@
-import { useRef, useState } from "react";
-import { Quotes } from "phosphor-react";
+import { useRef, useState } from 'react';
+import { Quotes } from 'phosphor-react';
 
 interface CardProps {
   text: string;

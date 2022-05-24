@@ -1,4 +1,4 @@
-import doctorImageUrl from '../assets/doctor.png';
+import doctorImageUrl from '../../assets/doctor.png';
 
 export function About() {
   return (

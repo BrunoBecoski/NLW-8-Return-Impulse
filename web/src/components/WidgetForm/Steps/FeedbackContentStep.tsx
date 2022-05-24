@@ -2,9 +2,10 @@ import { FormEvent, useState } from 'react';
 import { ArrowLeft } from 'phosphor-react';
 
 import { api } from '../../../lib/api';
-import { CloseButton } from '../../CloseButton';
-import { ScreenshotButton } from '../ScreenshotButton';
-import { Loading } from '../../Loading';
+import { CloseButton } from '../../common/CloseButton';
+import { ScreenshotButton } from '../../common/ScreenshotButton';
+import { Loading } from '../../common/Loading';
+
 import { FeedbackType, feedbackTypes } from '..';
 
 interface FeedbackContentStepProps {
@@ -59,7 +60,7 @@ export function FeedbackContentStep({
 
       <form onSubmit={handleSubmitFeedback} className="my-4 w-full">
         <textarea 
-          className="min-w-[304px] w-full min-h-[122px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
+          className="min-w-[304px] w-full min-h-[122px] text-sm placeholder-zinc-400 text-zinc-100 border-zinc-600 bg-transparent rounded-md focus:border-brand-500 focus:ring-brand-500 focus:ring-1 focus:outline-none resize-none scrollbar-thumb-zinc-700 scrollbar-track-transparent scrollbar-thin"
           placeholder="Conte com detalhes o que está acontecendo..."
           onChange={event => setComment(event.target.value)}
         />

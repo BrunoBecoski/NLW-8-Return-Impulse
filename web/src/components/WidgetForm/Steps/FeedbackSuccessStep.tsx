@@ -1,4 +1,4 @@
-import { CloseButton } from "../../CloseButton";
+import { CloseButton } from '../../common/CloseButton';
 
 interface FeedbackSuccessStepProps {
   onFeedbackRestartRequested: () => void;
