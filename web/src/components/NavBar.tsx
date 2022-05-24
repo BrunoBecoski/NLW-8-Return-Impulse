@@ -1,9 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { FacebookLogo, InstagramLogo, List, X, YoutubeLogo } from 'phosphor-react';
 
+import { PrimaryButton } from './PrimaryButton';
+import { SecondaryButton } from './SecondaryButton';
+
 import logoImageUrl from '../assets/logo.svg';
 import logoOnSurfaceUrl from '../assets/logoOnSurface.svg';
-import { Button } from './Button';
 
 interface NavBarProps {
   menuIsOpen: boolean;
@@ -26,7 +28,7 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
     divRef.current?.classList.add("bg-brand-500");
     divRef.current?.getElementsByClassName("button-list")[0].classList.add("text-brand-50");
   }
-
+  
   function removeStyle() {
     divRef.current?.classList.remove("bg-brand-500");
     divRef.current?.getElementsByClassName("button-list")[0].classList.remove("text-brand-50");
@@ -56,7 +58,7 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
 
   return (
     <nav className="flex flex-col fixed z-50">
-      <div ref={divRef} className="flex justify-between items-center w-screen px-6 py-4">
+      <div ref={divRef} className="flex justify-between items-center w-screen px-6 py-4 transition-colors">
         <a href="#">
           <img
             className="h-[18px]"
@@ -65,20 +67,17 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
           />
         </a>
 
-        <button onClick={handleButtonList} className="button-list text-brand-500">
+        <button onClick={handleButtonList} className="button-list text-brand-500 md:hidden">
           {
             menuIsOpen
             ? <X size={20} weight={'bold'} />
             : <List size={20} weight={'bold'} />
           }
         </button>
-      </div>
-
-      {
-        menuIsOpen &&
-        <div 
+      
+        {/* <div 
           style={{ height: `calc(${window.innerHeight}px - ${divRef.current?.clientHeight}px)` }}
-          className="flex flex-col items-center justify-around w-screen text-center bg-brand-500"
+          className="flex flex-col md:flex-row items-center justify-around w-screen text-center bg-brand-500 md:hidden"
         >
           <div className="flex flex-col gap-10">
             <ul className="flex flex-col gap-10 text-brand-50 text-2xl font-bold">
@@ -96,12 +95,12 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
               </li>
             </ul>
 
-            <Button onClick={() => handleRedirect("contact")} onSurface>
+            <PrimaryButton onClick={() => handleRedirect("contact")} onSurface>
               Agende sua consulta
-            </Button>
+            </PrimaryButton>
           </div>
 
-          <ul className="flex gap-8 text-brand-50">
+          <ul className="flex gap-8 text-brand-50 md:hidden">
             <li className="hover:opacity-80">
               <a target="_blank" href="https://www.instagram.com">
                 <InstagramLogo size={24} weight={'bold'} />
@@ -118,8 +117,16 @@ export function NavBar({ menuIsOpen, setMenuIsOpen }: NavBarProps) {
               </a>
             </li>
           </ul>
-        </div>
-      }
+        </div> */}
+
+        <SecondaryButton 
+          className="hidden md:block"
+          onSurface={!(offset == 0)}
+          onClick={() => handleRedirect("contact")}
+        >
+          Agendar consulta
+        </SecondaryButton>
+      </div>
     </nav>
   );
 }

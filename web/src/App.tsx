@@ -16,19 +16,14 @@ export function App() {
  return (
     <div>
       <NavBar menuIsOpen={menuIsOpen} setMenuIsOpen={setMenuIsOpen}/>
-      {
-        !menuIsOpen &&
-        <>
-          <Header />
-          <Services />
-          <Depositions />
-          <Brands />
-          <About />
-          <Contact />
-          <Footer />
-          <Widget />
-        </>
-      }
+      <Header />
+      <Services />
+      <Depositions />
+      <Brands />
+      <About />
+      <Contact />
+      <Footer />
+      <Widget />
     </div>
   );
 }

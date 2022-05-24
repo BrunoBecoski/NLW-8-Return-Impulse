@@ -1,13 +1,13 @@
-interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+interface PrimaryButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   onSurface?: boolean;
 }
 
-export function Button({ 
+export function PrimaryButton({ 
   onSurface = false, 
   children,
   className,
   ...rest
-}: ButtonProps) {
+}: PrimaryButtonProps) {
   if(onSurface) {
     return (
       <button

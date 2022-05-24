@@ -1,6 +1,6 @@
 import { WhatsappLogo } from 'phosphor-react';
 
-import { Button } from './Button';
+import { PrimaryButton } from './PrimaryButton';
 
 import womanImageUrl from '../assets/woman.png';
 
@@ -17,10 +17,10 @@ export function Header() {
         <h1 className="mt-4 font-bold text-3xl text-brand-headline" >Assistência médica simplificada para todos</h1>
         <p className="mt-6 text-lg">Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a longo prazo.</p>
         
-        <Button onClick={handleContact} className="mt-8">
+        <PrimaryButton onClick={handleContact} className="mt-8">
           <WhatsappLogo size={20} />
           Agende sua consulta
-        </Button>
+        </PrimaryButton>
       </div>
       <img 
         className="w-64 m-auto mt-16" 

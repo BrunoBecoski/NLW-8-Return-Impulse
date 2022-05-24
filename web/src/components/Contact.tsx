@@ -1,4 +1,4 @@
-import { Button } from "./Button";
+import { PrimaryButton } from "./PrimaryButton";
 import { EnvelopeSimple, MapPin, WhatsappLogo } from "phosphor-react";
 
 import menImageUrl from '../assets/men.png';
@@ -22,10 +22,10 @@ export function Contact() {
         </ul>
 
         <a className="inline-block mb-14" target="_blank" href="https://wa.me/0123456789">
-          <Button>
+          <PrimaryButton>
             <WhatsappLogo size={24} />
             Agende sua consulta
-          </Button>
+          </PrimaryButton>
         </a>
 
         <img 
