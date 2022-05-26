@@ -23,7 +23,7 @@ function Card({ text, client }: CardProps) {
   );
 }
 
-export function Depositions() {
+export function Testimonial() {
   const carouselRef = useRef<HTMLDivElement>({} as HTMLDivElement);
   const [cardListDots, setCardListDots] = useState([true, false, false, false]);
 
@@ -37,7 +37,7 @@ export function Depositions() {
   }
   
   return (
-    <section id="depositions" className="px-6 py-24 bg-brand-50 rounded"> 
+    <section id="testimonial" className="px-6 py-24 bg-brand-50 rounded"> 
       <header className="mb-14">
         <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
         <h2 className="font-bold text-3xl text-brand-headline">O que os clientes dizem sobre o DoctorCare</h2>

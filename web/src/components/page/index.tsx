@@ -1,17 +1,17 @@
 import { About } from './About';
 import { Brands } from './Brands';
 import { Contact } from './Contact';
-import { Depositions } from './Depositions';
+import { Testimonial } from './Testimonial';
 import { Footer } from './Footer';
 import { Header } from './Header';
-import { Services } from './Services';
+import { Service } from './Service';
 
 export function Page() {
   return (
     <>
       <Header />
-      <Services />
-      <Depositions />
+      <Service />
+      <Testimonial />
       <Brands />
       <About />
       <Contact />
