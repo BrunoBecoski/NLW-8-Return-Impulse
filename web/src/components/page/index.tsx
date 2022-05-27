@@ -8,7 +8,7 @@ import { Service } from './Service';
 
 export function Page() {
   return (
-    <>
+    <div className="m-auto flex flex-col">
       <Header />
       <Service />
       <Testimonial />
@@ -16,6 +16,6 @@ export function Page() {
       <About />
       <Contact />
       <Footer />
-    </>
+    </div>
   );
 }

@@ -37,41 +37,43 @@ export function Testimonial() {
   }
   
   return (
-    <section id="testimonial" className="px-6 py-24 bg-brand-50 rounded"> 
-      <header className="mb-14">
-        <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
-        <h2 className="font-bold text-3xl text-brand-headline">O que os clientes dizem sobre o DoctorCare</h2>
-      </header>
-      
-      <div ref={carouselRef}  className="flex items-center relative overflow-hidden scroll-smooth">
-        <ul className="flex items-center gap-10">
-          <Card 
-            text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-            client="Bruno Becoski"
-          />
-          <Card
-            text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-            client="Bruno Becoski"
-          />
-          <Card 
-            text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-            client="Bruno Becoski"
-          />
-          <Card
-            text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-            client="Bruno Becoski"
-          />
-        </ul>
-      </div>
+    <section id="testimonial" className="bg-brand-50"> 
+      <div className="max-w-6xl m-auto">
+        <header className="mb-14">
+          <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
+          <h2 className="font-bold text-3xl text-brand-headline">O que os clientes dizem sobre o DoctorCare</h2>
+        </header>
+        
+        <div ref={carouselRef}  className="flex items-center relative overflow-hidden scroll-smooth">
+          <ul className="flex items-center gap-10">
+            <Card 
+              text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+              client="Bruno Becoski"
+            />
+            <Card
+              text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+              client="Bruno Becoski"
+            />
+            <Card 
+              text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+              client="Bruno Becoski"
+            />
+            <Card
+              text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+              client="Bruno Becoski"
+            />
+          </ul>
+        </div>
 
-      <div className="flex gap-2 justify-center mt-10">
-        {
-          cardListDots.map((card, index) => 
-            card
-            ? <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-500 rounded-full" />
-            : <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-200 rounded-full" />
-          )
-        }
+        <div className="flex gap-2 justify-center mt-10">
+          {
+            cardListDots.map((card, index) => 
+              card
+              ? <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-500 rounded-full" />
+              : <button key={index} onClick={() => scrollCard(index)} className="h-3 w-3 bg-brand-200 rounded-full" />
+            )
+          }
+        </div>
       </div>
     </section>
   );
