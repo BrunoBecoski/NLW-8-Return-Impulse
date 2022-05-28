@@ -38,7 +38,7 @@ export function Testimonial() {
   
   return (
     <section id="testimonial" className="bg-brand-50"> 
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <header className="mb-14">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
           <h2 className="font-bold text-3xl text-brand-headline">O que os clientes dizem sobre o DoctorCare</h2>

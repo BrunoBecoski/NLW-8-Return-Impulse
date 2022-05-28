@@ -3,7 +3,7 @@ import doctorImageUrl from '../../assets/doctor.png';
 export function About() {
   return (
     <section id="about" className="bg-brand-200">
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <header className="mb-6">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Sobre nós</h4>
           <h2 className="font-bold text-3xl text-brand-headline">Entenda quem somos e por que existimos</h2>

@@ -7,7 +7,7 @@ import menImageUrl from '../../assets/men.png';
 export function Contact() {
   return(
     <section id="contact" className="bg-brand-50">
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <header className="mb-8">
           <h2 className="font-bold text-3xl text-brand-headline">Entre em contato com a gente!</h2>
         </header>

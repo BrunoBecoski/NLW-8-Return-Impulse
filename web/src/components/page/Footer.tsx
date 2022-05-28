@@ -5,7 +5,7 @@ import logoOnSurfaceUrl from '../../assets/logoOnSurface.svg';
 export function Footer() {
   return(
     <footer className="bg-brand-500">
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <a href="#">
           <img
             className="h-8 mb-6"

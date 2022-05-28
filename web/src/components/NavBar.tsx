@@ -16,7 +16,7 @@ export function NavBar() {
   const [testimonialHeight, setTestimonialHeight] = useState(0); 
   const [aboutHeight, setAboutHeight] = useState(0);
 
-  const divRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const ulRef = useRef<HTMLUListElement>(null);
 
@@ -30,8 +30,8 @@ export function NavBar() {
   }
 
   function addStyle() {
-    divRef.current?.classList.add("bg-brand-500");
-    divRef.current?.classList.remove("bg-brand-200");
+    navRef.current?.classList.add("bg-brand-500");
+    navRef.current?.classList.remove("bg-brand-200");
 
     buttonRef.current?.classList.add("text-brand-50");
     buttonRef.current?.classList.remove("text-brand-500");
@@ -41,8 +41,8 @@ export function NavBar() {
   }
   
   function removeStyle() {
-    divRef.current?.classList.remove("bg-brand-500");
-    divRef.current?.classList.add("bg-brand-200");
+    navRef.current?.classList.remove("bg-brand-500");
+    navRef.current?.classList.add("bg-brand-200");
 
     buttonRef.current?.classList.remove("text-brand-50");
     buttonRef.current?.classList.add("text-brand-500");
@@ -53,9 +53,7 @@ export function NavBar() {
 
   function handleRedirect(value: string) {
     handleButtonList();
-    setTimeout(() => {
-      window.location.replace(`/#${value}`);
-    }, 0);
+    window.location.replace(`/#${value}`);
   }
   
   useEffect(() => {
@@ -96,70 +94,67 @@ export function NavBar() {
   }, [offset]);
 
   return (
-    <nav className="flex flex-col fixed z-50 ">
-      <div 
-        ref={divRef}
-        className="flex justify-between items-center w-screen px-6 py-4 transition-colors"
-      >
-        <a href="#">
-          <img
-            className="h-[18px]"
-            src={offset > 0 || menuIsOpen ? logoOnSurfaceUrl : logoImageUrl } 
-            alt="Logo DoctorCare"
-          />
-        </a>       
-        
-        <button
-          ref={buttonRef}
-          onClick={handleButtonList} 
-          className="text-brand-500 md:hidden"
-        >
-          {
-            menuIsOpen
-            ? <X size={20} weight={'bold'} />
-            : <List size={20} weight={'bold'} />
-          }
-        </button>
+    <nav ref={navRef} className="flex flex-col fixed z-50 w-screen">
+      <div className="flex justify-center px-6">
+        <div className="flex justify-between items-center flex-1 max-w-6xl py-4">
+          <a href="#">
+            <img
+              className="h-4"
+              src={offset > 0 || menuIsOpen ? logoOnSurfaceUrl : logoImageUrl } 
+              alt="Logo DoctorCare"
+            />
+          </a>       
+          
+          <button
+            ref={buttonRef}
+            onClick={handleButtonList} 
+            className="text-brand-500 md:hidden"
+          >
+            {
+              menuIsOpen
+              ? <X size={20} weight={'bold'} />
+              : <List size={20} weight={'bold'} />
+            }
+          </button>
 
-        <ul
-          ref={ulRef}
-          className="hidden md:flex gap-8 text-brand-500"
-        >
-          <li className="
-            hover:opacity-80 font-bold 
-            after:block after:relative after:w-full after:h-[2px] after:top-[22px] after:bg-pink-500
-          ">
-            <a onClick={() => handleRedirect("header")}>Início</a>
-          </li>
+          <ul
+            ref={ulRef}
+            className="hidden md:flex gap-8 text-brand-500"
+          >
+            <li className="
+              hover:opacity-80 font-bold 
+              after:block after:relative after:w-full after:h-[2px] after:top-[22px] after:bg-pink-500
+            ">
+              <a href="#header">Início</a>
+            </li>
+            <li className="hover:opacity-80">
+              <a href="#service">Serviços</a>
+            </li>
+            <li className="hover:opacity-80">
+              <a href="#testimonial">Depoimentos</a>
+            </li>
+            <li className="hover:opacity-80">
+              <a href="#about">Sobre</a>
+            </li>
+          </ul>          
 
-          <li className="hover:opacity-80">
-            <a onClick={() => handleRedirect("service")}>Serviços</a>
-          </li>
-          <li className="hover:opacity-80">
-            <a onClick={() => handleRedirect("depositions")}>Depoimentos</a>
-          </li>
-          <li className="hover:opacity-80">
-            <a onClick={() => handleRedirect("about")}>Sobre</a>
-          </li>
-        </ul>          
+          <SecondaryButton 
+            className="hidden md:block"
+            onSurface={!(offset == 0)}
+            onClick={() => window.location.replace("#contact")}
+          >
+            Agendar consulta
+          </SecondaryButton>
 
-        <SecondaryButton 
-          className="hidden md:block"
-          onSurface={!(offset == 0)}
-          onClick={() => handleRedirect("contact")}
-        >
-          Agendar consulta
-        </SecondaryButton>
-
+        </div>
       </div>
 
-      {
-        menuIsOpen && 
-        <div 
-          style={{ height: `calc(${window.innerHeight}px - ${divRef.current?.clientHeight}px)` }}
-          className="flex flex-col items-center justify-around w-screen text-center bg-brand-500 md:hidden"
-        >
-          <div className="flex flex-col gap-10">
+        {
+          menuIsOpen &&
+          <div 
+            style={{ height: `calc(${window.innerHeight}px - ${navRef.current?.clientHeight}px)` }} 
+            className="flex flex-col justify-evenly items-center text-center gap-10 bg-brand-500"
+          >
             <ul className="flex flex-col gap-10 text-brand-50 text-2xl font-bold">
               <li className="hover:opacity-80">
                 <a onClick={() => handleRedirect("header")}>Início</a>
@@ -168,7 +163,7 @@ export function NavBar() {
                 <a onClick={() => handleRedirect("service")}>Serviços</a>
               </li>
               <li className="hover:opacity-80">
-                <a onClick={() => handleRedirect("depositions")}>Depoimentos</a>
+                <a onClick={() => handleRedirect("testimonial")}>Depoimentos</a>
               </li>
               <li className="hover:opacity-80">
                 <a onClick={() => handleRedirect("about")}>Sobre</a>
@@ -178,28 +173,26 @@ export function NavBar() {
             <PrimaryButton onClick={() => handleRedirect("contact")} onSurface>
               Agende sua consulta
             </PrimaryButton>
+          
+            <ul className="flex gap-8 text-brand-50">
+              <li className="hover:opacity-80">
+                <a target="_blank" href="https://www.instagram.com">
+                  <InstagramLogo size={24} weight={'bold'} />
+                </a>
+              </li>
+              <li className="hover:opacity-80">
+                <a target="_blank" href="https://www.facebook.com">
+                  <FacebookLogo size={24} weight={'bold'} />
+                </a>
+              </li>
+              <li className="hover:opacity-80">
+                <a target="_blank" href="https://www.youtube.com">
+                  <YoutubeLogo size={24} weight={'bold'} />
+                </a>
+              </li>
+            </ul>
           </div>
-            
-
-          <ul className="flex gap-8 text-brand-50 md:hidden">
-            <li className="hover:opacity-80">
-              <a target="_blank" href="https://www.instagram.com">
-                <InstagramLogo size={24} weight={'bold'} />
-              </a>
-            </li>
-            <li className="hover:opacity-80">
-              <a target="_blank" href="https://www.facebook.com">
-                <FacebookLogo size={24} weight={'bold'} />
-              </a>
-            </li>
-            <li className="hover:opacity-80">
-              <a target="_blank" href="https://www.youtube.com">
-                <YoutubeLogo size={24} weight={'bold'} />
-              </a>
-            </li>
-          </ul>
-        </div>
-      }
+        }
     </nav>
   );
 }

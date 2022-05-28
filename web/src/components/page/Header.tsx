@@ -12,7 +12,7 @@ export function Header() {
 
   return (
     <header id="header" className="text-center before:w-full before:h-[1040px] before:absolute before:top-0 before:left-0 before:z-[-1] before:bg-brand-200">
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col items-center">
           <h4 className="text-sm font-bold uppercase text-brand-500 mt-10">Boas-vindas a DoctorCare 👋</h4>
           <h1 className="mt-4 font-bold text-3xl text-brand-headline" >Assistência médica simplificada para todos</h1>
@@ -24,7 +24,7 @@ export function Header() {
           </PrimaryButton>
         </div>
         <img 
-          className="w-64 m-auto mt-16" 
+          className="w-64 mx-auto mt-16" 
           src={womanImageUrl} 
           alt="Mulher negra vestindo moletom verde com as duas mãos no peito e sorrindo"
         />

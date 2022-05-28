@@ -20,7 +20,7 @@ function Card({ title, text }: CardProps) {
 export function Service() {
   return (
     <section id="service">
-      <div className="max-w-6xl m-auto">
+      <div className="max-w-6xl mx-auto px-6">
         <header className="px-2 text-center mb-14">
           <h4 className="font-bold text-sm uppercase text-brand-500 mb-4">Serviços</h4>
           <h2 className="font-bold text-3xl text-brand-headline">Como podemos ajudá-lo a se sentir melhor?</h2>
