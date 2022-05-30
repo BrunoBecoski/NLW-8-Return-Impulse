@@ -16,7 +16,7 @@ export function Header() {
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left">
             <h4 className="text-sm font-bold uppercase text-brand-500 mt-10">Boas-vindas a DoctorCare 👋</h4>
-            <h1 className="mt-4 font-bold text-3xl md:text-5xl text-brand-headline" >Assistência médica simplificada para todos</h1>
+            <h1 className="mt-4 font-bold text-3xl md:text-4xl lg:text-5xl text-brand-headline" >Assistência médica simplificada para todos</h1>
             <p className="mt-6 text-lg">Os médicos da DoctorCare vão além dos sintomas para tratar a causa raiz de sua doença e proporcionar uma cura a longo prazo.</p>
             
             <PrimaryButton onClick={handleContact} className="mt-8">
@@ -31,15 +31,17 @@ export function Header() {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 w-min md:w-auto mx-auto text-center md:-mt-14 rounded-md bg-brand-50 border-2 border-brand-200">
+        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 max-w-xs md:max-w-none mx-auto text-center md:-mt-14 rounded-md bg-brand-50 border-2 border-brand-200">
           <div>
             <h3 className="text-5xl font-bold text-brand-headline mb-1">+3.500</h3>
             <p className="text-brand-500">Pacientes atendidos</p>
           </div>
+          <span className="md:h-20 md:w-px bg-brand-200" />
           <div>
             <h3 className="text-5xl font-bold text-brand-headline mb-1">+15</h3>
             <p className="text-brand-500">Especialistas disponíveis</p>
           </div>
+          <span className="md:h-20 md:w-px bg-brand-200" />
           <div>
             <h3 className="text-5xl font-bold text-brand-headline mb-1">+10</h3>
             <p className="text-brand-500">Anos no mercado</p>
