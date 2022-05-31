@@ -37,7 +37,7 @@ export function Testimonial() {
   }
   
   return (
-    <section id="testimonial" className="bg-brand-50"> 
+    <section id="testimonial" className="mt-5 md:mt-20 pt-20 pb-24 md:pb-40 bg-brand-50"> 
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-14">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
