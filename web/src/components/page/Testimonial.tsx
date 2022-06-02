@@ -8,7 +8,7 @@ interface CardProps {
 
 function Card({ text, client }: CardProps) {
   return(
-    <div className="p-8 flex flex-col gap-5 bg-brand-100 w-[calc(100vw_-_3rem)]">
+    <div className="p-8 flex flex-col gap-5 bg-brand-200 w-[calc(100vw_-_3rem)] md:max-w-[calc(1152px_/_2_-_3rem)]">
       <Quotes className="text-brand-500" weight="fill" size={40} />
       <p>{text}</p>
       <div className="flex items-center gap-4 ">
@@ -65,69 +65,67 @@ export function Testimonial() {
   }, [screenWidth]);
 
   return (
-    <section id="testimonial" className="mt-5 md:mt-20 pt-20 pb-24 md:pb-40 bg-brand-50"> 
+    <section id="testimonial" className="mt-5 pt-20 pb-20 bg-brand-50"> 
       <div className="max-w-6xl mx-auto px-6">
-        <header className="mb-14">
+        <header className="mb-14 text-center">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
-          <h2 className="font-bold text-3xl text-brand-headline">O que os clientes dizem sobre o DoctorCare</h2>
+          <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">O que os clientes dizem<br className="hidden md:block"/> sobre o DoctorCare</h2>
         </header>
         
         <div ref={carouselRef}  className="flex items-center relative overflow-hidden scroll-smooth">
-
-        {
-          screenWidth < 768
-          ? 
-            <ul className="flex items-center gap-10 md:hidden w-full">
-              <li className="w-[calc(100vw_-_3rem)]">
-                <Card 
-                  text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-              <li className="w-[calc(100vw_-_3rem)]">
-                <Card
-                  text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-              <li className="w-[calc(100vw_-_3rem)]">
-                <Card 
-                  text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-              <li className="w-[calc(100vw_-_3rem)]">
-                <Card
-                  text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-            </ul>
-          : 
-            <ul className="md:flex items-center gap-10 hidden">
-              <li className="flex gap-8 flex-1 max-w-lg">
-                <Card 
-                  text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-                <Card
-                  text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-              <li>
-                <Card 
-                  text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
+          {
+            screenWidth < 768
+            ? 
+              <ul className="flex items-center gap-10 md:hidden w-full">
+                <li>
+                  <Card 
+                    text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
                   />
-                <Card
-                  text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
-                  client="Bruno Becoski"
-                />
-              </li>
-            </ul>
-        }             
-           
+                </li>
+                <li>
+                  <Card
+                    text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                </li>
+                <li>
+                  <Card 
+                    text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                </li>
+                <li>
+                  <Card
+                    text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                </li>
+              </ul>
+            : 
+              <ul className="md:flex items-center gap-10 hidden">
+                <li className="flex gap-10">
+                  <Card 
+                    text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                  <Card
+                    text="2 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                </li>
+                <li className="flex gap-10">
+                  <Card 
+                    text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                    />
+                  <Card
+                    text="4 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
+                    client="Bruno Becoski"
+                  />
+                </li>
+              </ul>
+          }                        
         </div>
 
         <div className="flex gap-2 justify-center mt-10">
