@@ -2,7 +2,7 @@ export function Brands() {
   return (
     <section className="bg-brand-50">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center p-10">
+        <div className="text-center pb-10">
           <h3 className="font-bold text-brand-headline text-2xl">
             Empresas que confiam
           </h3>

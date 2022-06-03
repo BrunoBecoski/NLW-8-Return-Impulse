@@ -8,7 +8,7 @@ interface CardProps {
 
 function Card({ text, client }: CardProps) {
   return(
-    <div className="p-8 flex flex-col gap-5 bg-brand-200 w-[calc(100vw_-_3rem)] md:max-w-[calc(1152px_/_2_-_3rem)]">
+    <div className="p-8 flex flex-col gap-5 bg-brand-200 w-[calc(100vw_-_3rem)]">
       <Quotes className="text-brand-500" weight="fill" size={40} />
       <p>{text}</p>
       <div className="flex items-center gap-4 ">
@@ -72,11 +72,11 @@ export function Testimonial() {
           <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">O que os clientes dizem<br className="hidden md:block"/> sobre o DoctorCare</h2>
         </header>
         
-        <div ref={carouselRef}  className="flex items-center relative overflow-hidden scroll-smooth">
+        <div ref={carouselRef} className="flex items-center relative overflow-hidden scroll-smooth w-full">
           {
             screenWidth < 768
             ? 
-              <ul className="flex items-center gap-10 md:hidden w-full">
+              <ul className="flex items-center gap-10 md:hidden">
                 <li>
                   <Card 
                     text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
@@ -103,9 +103,9 @@ export function Testimonial() {
                 </li>
               </ul>
             : 
-              <ul className="md:flex items-center gap-10 hidden">
-                <li className="flex gap-10">
-                  <Card 
+              <ul className="md:flex items-center gap-10 hidden w-full">
+                <li className="flex gap-10 w-full">
+                  <Card
                     text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
                     client="Bruno Becoski"
                   />
@@ -114,8 +114,8 @@ export function Testimonial() {
                     client="Bruno Becoski"
                   />
                 </li>
-                <li className="flex gap-10">
-                  <Card 
+                <li className="flex gap-10 w-full">
+                  <Card
                     text="3 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
                     client="Bruno Becoski"
                     />
