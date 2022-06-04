@@ -1,10 +1,11 @@
-import { About } from './About';
-import { Brands } from './Brands';
-import { Contact } from './Contact';
-import { Testimonial } from './Testimonial';
-import { Footer } from './Footer';
 import { Header } from './Header';
 import { Service } from './Service';
+import { Testimonial } from './Testimonial';
+import { Brands } from './Brands';
+import { BannerCTA } from './BannerCTA';
+import { About } from './About';
+import { Contact } from './Contact';
+import { Footer } from './Footer';
 
 export function Page() {
   return (
@@ -13,6 +14,7 @@ export function Page() {
       <Service />
       <Testimonial />
       <Brands />
+      <BannerCTA />
       <About />
       <Contact />
       <Footer />
