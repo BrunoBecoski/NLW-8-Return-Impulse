@@ -5,19 +5,21 @@ import logoOnSurfaceUrl from '../../assets/logoOnSurface.svg';
 export function Footer() {
   return(
     <footer className="bg-brand-500">
-      <div className="max-w-6xl mx-auto px-6">
-        <a href="#">
-          <img
-            className="h-8 mb-6"
-            src={logoOnSurfaceUrl} 
-            alt="Logo DoctorCare"
-          />
-        </a>
-        
-        <p className="mb-8 leading-loose text-brand-50">
-          ©2021 Beautysalon. <br/>
-          Todos os direitos reservados.
-        </p>
+      <div className="max-w-6xl mx-auto px-6 py-20 md:flex md:items-center md:justify-between">
+        <div>
+          <a href="#">
+            <img
+              className="h-8 mb-6"
+              src={logoOnSurfaceUrl} 
+              alt="Logo DoctorCare"
+            />
+          </a>
+          
+          <div className="mb-8 md:mb-0 text-base md:text-sm text-brand-50">
+            <p className="mb-3 md:mb-4">©2021 Beautysalon.</p>
+            <p> Todos os direitos reservados.</p>
+          </div> 
+        </div>
 
         <ul className="flex gap-8 text-brand-50">
           <li className="hover:opacity-80">

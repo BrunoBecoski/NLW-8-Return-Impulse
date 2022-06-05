@@ -10,7 +10,7 @@ export function BannerCTA() {
   return (
     <section className="md:px-6 relative 
       before:w-full before:h-1/2 before:absolute before:top-0 before:left-0 before:-z-10 before:bg-brand-50
-      after:w-full after:h-1/2 after:absolute after:bottom-0 after:left-0 after:-z-10 after:bg-brand-200
+      after:w-full after:h-1/2 after:absolute after:bottom-0 after:left-0 after:-z-10 after:bg-brand-100
     ">
       <div className="max-w-6xl mx-auto py-14 px-6 md:p-28 md:rounded-xl flex flex-col md:flex-row gap-6 items-center md:justify-between bg-brand-500">
         <h2 className="font-bold text-3xl md:text-4xl text-center md:text-left text-brand-50">Comece a cuidar de sua <br className="hidden md:block"/> saúde agora mesmo</h2>

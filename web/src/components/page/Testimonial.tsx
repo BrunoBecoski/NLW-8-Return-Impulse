@@ -34,7 +34,7 @@ export function Testimonial() {
   }
 
   function scrollCard(index: number) {
-
+    
     let newCardListDots: boolean[] = [];
 
     if(screenWidth < 768) {
@@ -42,11 +42,12 @@ export function Testimonial() {
     } else {
       newCardListDots = [false, false];
     }
+
     newCardListDots[index] = true;
 
     setCardListDots(newCardListDots);
 
-    carouselRef.current.getElementsByTagName("li")[index].scrollIntoView({block: "center", inline: "center"});
+    carouselRef.current.getElementsByTagName("li")[index].scrollIntoView({block: "nearest"});
   }
 
   useEffect(() => {
@@ -76,7 +77,7 @@ export function Testimonial() {
           {
             screenWidth < 768
             ? 
-              <ul className="flex items-center gap-10 md:hidden">
+              <ul className="flex items-center gap-10">
                 <li>
                   <Card 
                     text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
@@ -103,7 +104,7 @@ export function Testimonial() {
                 </li>
               </ul>
             : 
-              <ul className="md:flex items-center gap-10 hidden w-full">
+              <ul className="flex items-center gap-10 w-full">
                 <li className="flex gap-10 w-full">
                   <Card
                     text="1 - Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint." 
