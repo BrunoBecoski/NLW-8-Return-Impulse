@@ -25,7 +25,7 @@ export function Header() {
             </PrimaryButton>
           </div>
           <img 
-            className="h-[340px] md:h-[550px] mx-auto mt-16  md:-z-10" 
+            className="h-[340px] md:h-[550px] mx-auto mt-16 md:-z-10 object-cover" 
             src={womanImageUrl} 
             alt="Mulher negra vestindo moletom verde com as duas mãos no peito e sorrindo"
           />
