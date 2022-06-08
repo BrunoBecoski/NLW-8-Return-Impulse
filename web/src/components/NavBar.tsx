@@ -6,7 +6,6 @@ import { SecondaryButton } from './common/SecondaryButton';
 
 import logoImageUrl from '../assets/logo.svg';
 import logoOnSurfaceUrl from '../assets/logoOnSurface.svg';
-import { BackToTop } from './BackToTop';
 
 export function NavBar() {
   const [offset, setOffset] = useState(0);
@@ -217,7 +216,7 @@ export function NavBar() {
       </nav>
       {
         offset > 200 &&
-          <span className="flex flex-col items-end fixed bottom-20 right-4 md:bottom-24 md:right-8">
+          <span className="flex flex-col items-end fixed z-50 bottom-4 right-4 md:bottom-8 md:right-8">
             <button onClick={() => window.location.replace('/#header')} className="flex items-center p-3 group bg-brand-500 rounded-full text-brand-50 border-2 border-brand-50">
               <ArrowUp size={24} weight='bold' />
             </button>
