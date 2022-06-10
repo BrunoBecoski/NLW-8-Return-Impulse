@@ -2,9 +2,9 @@ import { Popover, Transition } from '@headlessui/react';
 import { ChatTeardropDots, GearSix, Image } from 'phosphor-react';
 
 import { WidgetForm } from './WidgetForm';
+import { WidgetTheme } from './WidgetTheme';
 
 export function Widget() {
-
   return (
     <Popover className="fixed flex items-center justify-center bottom-4 left-4 md:bottom-8 md:left-8 p-3 rounded-full bg-brand-500 text-brand-50 border-2 border-brand-50 transition-transform duration-1000">
       {({ open }) => (<>
@@ -34,7 +34,7 @@ export function Widget() {
               </Popover.Button>
 
               <Popover.Panel className="absolute left-0 bottom-14" >
-                theme
+                <WidgetTheme />
               </Popover.Panel>
             </Popover>
           </Popover.Group>
