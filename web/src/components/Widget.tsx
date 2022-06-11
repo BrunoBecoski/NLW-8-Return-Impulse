@@ -1,5 +1,5 @@
 import { Popover, Transition } from '@headlessui/react';
-import { ChatTeardropDots, GearSix, Image } from 'phosphor-react';
+import { ChatTeardropDots, GearSix, PaintBrush } from 'phosphor-react';
 
 import { WidgetForm } from './WidgetForm';
 import { WidgetTheme } from './WidgetTheme';
@@ -30,7 +30,7 @@ export function Widget() {
 
             <Popover className="flex">
               <Popover.Button>
-                <Image size={24} />
+                <PaintBrush size={24} />
               </Popover.Button>
 
               <Popover.Panel className="absolute left-0 bottom-14" >
