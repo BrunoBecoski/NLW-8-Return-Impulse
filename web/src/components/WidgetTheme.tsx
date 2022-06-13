@@ -1,5 +1,5 @@
 import { RadioGroup } from '@headlessui/react';
-import { Check } from 'phosphor-react';
+import { Check, Moon, Sun } from 'phosphor-react';
 import { useState } from 'react';
 
 import { CloseButton } from './common/CloseButton';
@@ -21,23 +21,27 @@ interface ColorThemeButtonProps {
 function BackgroundThemeButton({ type, checked }: BackgroundThemeButtonProps) {
   return (
     <div 
-      className={`flex justify-center items-center p-3 border-4 cursor-pointer rounded-full
+      className={`flex justify-center items-center p-3 border-2 md:w-44 rounded-full cursor-pointer
         ${checked && 'border-brand-500'}
         ${type === 'light' ? 'bg-white' : 'bg-black'}
       `}
     >
       <div 
-        className={`flex justify-center items-center h-6 w-6 rounded-full border-2 
+        className={`flex justify-center items-center h-6 w-6 rounded-full border-2
           ${checked ? 'bg-brand-500 border-brand-500' : 'border-gray-500'}
         `}
       >
-        <Check size={16} weight="bold" className={checked ? 'text-brand-50' : 'text-transparent'} />
+        { type === 'light' 
+          ? 
+            <Sun size={16} weight="fill" className={checked ? 'text-brand-50' : 'text-transparent'} /> 
+          :
+            <Moon size={16} weight="fill" className={checked ? 'text-brand-50' : 'text-transparent'} /> 
+        }
       </div>
       <div className="flex flex-1 justify-center">
 
         <p className={
-            checked ? 'text-brand-500 font-bold' :
-              type === 'light' ? 'text-black' : 'text-white'
+            checked ? 'text-brand-500 font-bold' : 'text-gray-500'
           }
         >
           Tema {type === 'light' ? 'claro' : 'escuro'}
@@ -51,29 +55,23 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
 
   const selectedColor = (() => {
     switch (type) {
-      case 'green': return '-[#00856F]';
-      case 'orange': return '-[#E8590C]';
-      case 'blue': return '-[#1971C2]';
-      case 'purple': return '-[#5F3DC4]';
-      case 'red': return '-[#C92A2A]';
-      case 'pink': return '-[#F91880]';
+      case 'green': return 'bg-[#00856F]';
+      case 'orange': return 'bg-[#E8590C]';
+      case 'blue': return 'bg-[#1971C2]';
+      case 'purple': return 'bg-[#5F3DC4]';
+      case 'red': return 'bg-[#C92A2A]';
+      case 'pink': return 'bg-[#F91880]';
     }
   })();
 
   return (
-    <div 
-      className={`h-14 w-14 flex justify-center items-center rounded-full border-4
-        ${ checked && `border${selectedColor}`}
-      `}
-    >
-      <div className={`flex items-center justify-center h-11 w-11 rounded-full bg${selectedColor}`}>
-        {
-          checked &&
-          <Check size={22} weight="bold" className="text-brand-50" />
-        }
-      </div>
+    <div className={`flex items-center justify-center h-11 w-11 rounded-full ${selectedColor} cursor-pointer`}>
+      {
+        checked &&
+        <Check size={22} weight="bold" className="text-brand-50" />
+      }
     </div>
-  )
+)
 }
 
 export function WidgetTheme() {
@@ -81,17 +79,17 @@ export function WidgetTheme() {
   const [colorTheme, setColorTheme] = useState<ColorThemeOptions>('green');
 
   return(
-    <div className="bg-brand-200 p-4 relative rounded-md mb-4 flex flex-col border-2 border-brand-500 w-[calc(100vw-2rem)] md:w-80">
-      <header>
+    <div className="bg-brand-200 p-4 relative rounded-2xl mb-4 flex flex-col border-2 border-brand-500 w-[calc(100vw-2rem)] md:max-w-md">
+      <header className="mb-4">
         <span className="text-brand-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />
       </header>
 
       <div>
-        <RadioGroup value={backgroundTheme} onChange={setBackgroundTheme}>
-          <RadioGroup.Label className="text-brand-headline mb-4">Cor de fundo</RadioGroup.Label>
+        <RadioGroup className="mb-3" value={backgroundTheme} onChange={setBackgroundTheme}>
+          <RadioGroup.Label className="text-brand-paragraph">Cor de fundo</RadioGroup.Label>
 
-          <div className="flex flex-col justify-between gap-4 rounded-sm p-2 bg-brand-100">
+          <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
             <RadioGroup.Option value="light">
               {({ checked }) => (
                 <BackgroundThemeButton 
@@ -113,10 +111,10 @@ export function WidgetTheme() {
         </RadioGroup>
 
         <RadioGroup value={colorTheme} onChange={setColorTheme}>
-          <RadioGroup.Label className="text-brand-headline mb-4">Cor</RadioGroup.Label>
+          <RadioGroup.Label className="text-brand-paragraph mb-4">Cor</RadioGroup.Label>
           
-            <div className="flex flex-col justify-between gap-4 rounded-sm p-2 bg-brand-100">
-              <div className="flex justify-between">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
+              <div className="flex justify-around md:w-1/2">
                 <RadioGroup.Option value="green">
                   {({ checked }) => (
                     <ColorThemeButton type="green" checked={checked} />
@@ -136,7 +134,7 @@ export function WidgetTheme() {
                 </RadioGroup.Option>
               </div>
 
-              <div className="flex justify-between">
+              <div className="flex justify-around md:w-1/2">
                 <RadioGroup.Option value="purple">
                   {({ checked }) => (
                     <ColorThemeButton type="purple" checked={checked} />
