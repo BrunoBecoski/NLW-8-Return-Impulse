@@ -1,6 +1,6 @@
 import { RadioGroup } from '@headlessui/react';
 import { Check, Moon, Sun } from 'phosphor-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { CloseButton } from './common/CloseButton';
 
@@ -55,17 +55,17 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
 
   const selectedColor = (() => {
     switch (type) {
-      case 'green': return 'bg-[#00856F]';
-      case 'orange': return 'bg-[#E8590C]';
-      case 'blue': return 'bg-[#1971C2]';
-      case 'purple': return 'bg-[#5F3DC4]';
-      case 'red': return 'bg-[#C92A2A]';
-      case 'pink': return 'bg-[#F91880]';
+      case 'green': return 'green';
+      case 'orange': return 'orange';
+      case 'blue': return 'blue';
+      case 'purple': return 'purple';
+      case 'red': return 'red';
+      case 'pink': return 'pink';
     }
   })();
 
   return (
-    <div className={`flex items-center justify-center h-11 w-11 rounded-full ${selectedColor} cursor-pointer`}>
+    <div className={`flex items-center justify-center h-11 w-11 rounded-full bg-${selectedColor} cursor-pointer`}>
       {
         checked &&
         <Check size={22} weight="bold" className="text-brand-50" />
@@ -78,8 +78,17 @@ export function WidgetTheme() {
   const [backgroundTheme, setBackgroundTheme] = useState<BackgroundThemeOptions>('light');
   const [colorTheme, setColorTheme] = useState<ColorThemeOptions>('green');
 
+  useEffect(() => {
+    if(backgroundTheme === 'light') {
+      document.documentElement.classList.remove("dark");
+    } else {
+      document.documentElement.classList.add("dark");
+    }
+  },[backgroundTheme]);
+
+
   return(
-    <div className="bg-brand-200 p-4 relative rounded-2xl mb-4 flex flex-col border-2 border-brand-500 w-[calc(100vw-2rem)] md:max-w-md">
+    <div className={`bg-${colorTheme} p-4 relative rounded-2xl mb-4 flex flex-col border-8 border-${colorTheme} w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
         <span className="text-brand-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />

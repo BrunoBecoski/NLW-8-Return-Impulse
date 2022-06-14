@@ -1,12 +1,20 @@
 module.exports = {
   content: ["./src/**/*.tsx"],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
+        green: '#00856F',
+        orange: '#E8590C',
+        blue: '#1971C2',
+        purple: '#5F3DC4',
+        red: '#C92A2A',
+        pink: '#F91880',
+
         brand: {
           50: '#FFFFFF',
           100: '#F7F9F9',
-          200: '#DCE9E2', 
+          200: '#DCE9E2',
           500: '#00856F',
           900: '#00453A', 
           headline: '#212529',
