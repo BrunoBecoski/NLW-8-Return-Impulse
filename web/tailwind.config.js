@@ -11,11 +11,13 @@ module.exports = {
         red: '#C92A2A',
         pink: '#F91880',
 
+        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+
         brand: {
           50: '#FFFFFF',
           100: '#F7F9F9',
           200: '#DCE9E2',
-          500: '#00856F',
+          500: 'var(--primary)',
           900: '#00453A', 
           headline: '#212529',
           paragraph: '#495057',

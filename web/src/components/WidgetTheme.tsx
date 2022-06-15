@@ -2,6 +2,14 @@ import { RadioGroup } from '@headlessui/react';
 import { Check, Moon, Sun } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 
+import { applyTheme } from '../themes/utils';
+import greenTheme from '../themes/green';
+import orangeTheme from '../themes/orange';
+import blueTheme from '../themes/blue';
+import purpleTheme from '../themes/purple';
+import redTheme from '../themes/red';
+import pinkTheme from '../themes/pink';
+
 import { CloseButton } from './common/CloseButton';
 
 type BackgroundThemeOptions = 'light' | 'dark';
@@ -55,17 +63,17 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
 
   const selectedColor = (() => {
     switch (type) {
-      case 'green': return 'green';
-      case 'orange': return 'orange';
-      case 'blue': return 'blue';
-      case 'purple': return 'purple';
-      case 'red': return 'red';
-      case 'pink': return 'pink';
+      case 'green': return 'bg-green';
+      case 'orange': return 'bg-orange';
+      case 'blue': return 'bg-blue';
+      case 'purple': return 'bg-purple';
+      case 'red': return 'bg-red';
+      case 'pink': return 'bg-pink';
     }
   })();
 
   return (
-    <div className={`flex items-center justify-center h-11 w-11 rounded-full bg-${selectedColor} cursor-pointer`}>
+    <div className={`flex items-center justify-center h-11 w-11 rounded-full ${selectedColor} cursor-pointer`}>
       {
         checked &&
         <Check size={22} weight="bold" className="text-brand-50" />
@@ -74,9 +82,11 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
 )
 }
 
+
 export function WidgetTheme() {
   const [backgroundTheme, setBackgroundTheme] = useState<BackgroundThemeOptions>('light');
   const [colorTheme, setColorTheme] = useState<ColorThemeOptions>('green');
+  
 
   useEffect(() => {
     if(backgroundTheme === 'light') {
@@ -86,9 +96,32 @@ export function WidgetTheme() {
     }
   },[backgroundTheme]);
 
+  useEffect(() => {
+    switch (colorTheme) {
+      case 'green':
+        applyTheme(greenTheme);
+        break;
+      case 'orange':
+        applyTheme(orangeTheme);
+        break;
+      case 'blue':
+        applyTheme(blueTheme);
+        break;
+      case 'purple':
+        applyTheme(purpleTheme);
+        break;
+      case 'red':
+        applyTheme(redTheme);
+        break;
+      case 'pink':
+        applyTheme(pinkTheme);
+        break;
+    }
+  }, [colorTheme])
+
 
   return(
-    <div className={`bg-${colorTheme} p-4 relative rounded-2xl mb-4 flex flex-col border-8 border-${colorTheme} w-[calc(100vw-2rem)] md:max-w-md`}>
+    <div className={`bg-primary bg-opacity-50  relative rounded-2xl mb-4 flex flex-col border-8 border-brand-500 w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
         <span className="text-brand-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />

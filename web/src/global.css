@@ -4,6 +4,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --color-primary: 255 115 179;
+  }
+}
+
+
 html {
   @apply w-full h-full scroll-smooth
 }
