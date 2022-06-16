@@ -3,6 +3,8 @@ import { Check, Moon, Sun } from 'phosphor-react';
 import { useEffect, useState } from 'react';
 
 import { applyTheme } from '../themes/utils';
+import lightTheme from '../themes/light';
+import darkTheme from '../themes/dark';
 import greenTheme from '../themes/green';
 import orangeTheme from '../themes/orange';
 import blueTheme from '../themes/blue';
@@ -79,20 +81,22 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
         <Check size={22} weight="bold" className="text-brand-50" />
       }
     </div>
-)
+  )
 }
 
 
 export function WidgetTheme() {
   const [backgroundTheme, setBackgroundTheme] = useState<BackgroundThemeOptions>('light');
   const [colorTheme, setColorTheme] = useState<ColorThemeOptions>('green');
-  
 
   useEffect(() => {
-    if(backgroundTheme === 'light') {
-      document.documentElement.classList.remove("dark");
-    } else {
-      document.documentElement.classList.add("dark");
+    switch (backgroundTheme) {
+      case 'light':
+        applyTheme(lightTheme);
+        break;
+      case 'dark':
+        applyTheme(darkTheme);
+        break;
     }
   },[backgroundTheme]);
 
@@ -121,7 +125,7 @@ export function WidgetTheme() {
 
 
   return(
-    <div className={`bg-primary bg-opacity-50  relative rounded-2xl mb-4 flex flex-col border-8 border-brand-500 w-[calc(100vw-2rem)] md:max-w-md`}>
+    <div className={`bg-brand-500/50 relative rounded-2xl mb-4 flex flex-col border-8 border-brand-200 w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
         <span className="text-brand-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />

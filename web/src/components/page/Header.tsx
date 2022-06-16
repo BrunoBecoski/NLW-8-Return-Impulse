@@ -11,7 +11,7 @@ export function Header() {
   }
 
   return (
-    <header id="header" className="pt-10 before:w-full before:h-[1080px] md:before:h-[678px] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-brand-200">
+    <header id="header" className="pt-10 before:w-full before:h-[1080px] md:before:h-[678px] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-brand-500/[.15]">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left">

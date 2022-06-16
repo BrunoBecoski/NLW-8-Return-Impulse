@@ -11,16 +11,69 @@ module.exports = {
         red: '#C92A2A',
         pink: '#F91880',
 
-        primary: 'rgb(var(--color-primary) / <alpha-value>)',
+        background: ({ opacityVariable, opacityValue }) => {
+          if (opacityValue !== undefined) {
+            return `rgba(var(--background), ${opacityValue})`
+          }
+          if (opacityVariable !== undefined) {
+            return `rgba(var(--background), var(${opacityVariable}, 1))`
+          }
+          return `rgb(var(--background))`
+        },
 
         brand: {
           50: '#FFFFFF',
-          100: '#F7F9F9',
-          200: '#DCE9E2',
-          500: 'var(--primary)',
-          900: '#00453A', 
-          headline: '#212529',
-          paragraph: '#495057',
+          100: '#fff700',
+
+          200: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--brand_200), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--brand_200), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--brand_200))`
+          },
+
+          500: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--brand_500), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--brand_500), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--brand_500))`
+          },
+
+          900: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--brand_900), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--brand_900), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--brand_900))`
+          },
+
+          headline: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--headline), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--headline), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--headline))`
+          },
+
+          paragraph: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--paragraph), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--paragraph), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--paragraph))`
+          },
         }
       },
       keyframes: {
