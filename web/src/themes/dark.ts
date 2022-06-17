@@ -1,9 +1,10 @@
 import { createTheme } from './utils';
 
 const darkTheme = createTheme({
-  background: '0, 0, 0',
-  headline: '244, 244, 245',
-  paragraph: '161, 161, 170'
+  background_500: '24, 24, 27',
+  background_900: '39, 39, 42',
+  text_500: '161, 161, 170',
+  text_900: '244, 244, 245'
 });
 
 export default darkTheme;

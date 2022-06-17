@@ -11,19 +11,53 @@ module.exports = {
         red: '#C92A2A',
         pink: '#F91880',
 
-        background: ({ opacityVariable, opacityValue }) => {
-          if (opacityValue !== undefined) {
-            return `rgba(var(--background), ${opacityValue})`
+        onSurface: "#FFFFFF",
+
+        background: {
+          500: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--background_500), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--background_500), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--background_500))`
+          },
+          900: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--background_900), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--background_900), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--background_900))`
           }
-          if (opacityVariable !== undefined) {
-            return `rgba(var(--background), var(${opacityVariable}, 1))`
-          }
-          return `rgb(var(--background))`
         },
 
+        text: {
+          500: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--text_500), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--text_500), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--text_500))`
+          },
+          900: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--text_900), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--text_900), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--text_900))`
+          }
+        },
+      
         brand: {
-          50: '#FFFFFF',
-          100: '#fff700',
+          50: '#17d4ca',
+          100: '#08ff13',
 
           200: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
@@ -53,27 +87,7 @@ module.exports = {
               return `rgba(var(--brand_900), var(${opacityVariable}, 1))`
             }
             return `rgb(var(--brand_900))`
-          },
-
-          headline: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--headline), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--headline), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--headline))`
-          },
-
-          paragraph: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--paragraph), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--paragraph), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--paragraph))`
-          },
+          }
         }
       },
       keyframes: {
