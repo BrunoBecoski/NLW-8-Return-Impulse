@@ -9,7 +9,8 @@ module.exports = {
         blue: '#1971C2',
         purple: '#5F3DC4',
         red: '#C92A2A',
-        pink: '#F91880',
+        pink: '#eb3187',
+
 
         onSurface: "#FFFFFF",
 
@@ -35,30 +36,36 @@ module.exports = {
         },
 
         text: {
-          500: ({ opacityVariable, opacityValue }) => {
+          primary: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
-              return `rgba(var(--text_500), ${opacityValue})`
+              return `rgba(var(--text_primary), ${opacityValue})`
             }
             if (opacityVariable !== undefined) {
-              return `rgba(var(--text_500), var(${opacityVariable}, 1))`
+              return `rgba(var(--text_primary), var(${opacityVariable}, 1))`
             }
-            return `rgb(var(--text_500))`
+            return `rgb(var(--text_primary))`
           },
-          900: ({ opacityVariable, opacityValue }) => {
+          secondary: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
-              return `rgba(var(--text_900), ${opacityValue})`
+              return `rgba(var(--text_secondary), ${opacityValue})`
             }
             if (opacityVariable !== undefined) {
-              return `rgba(var(--text_900), var(${opacityVariable}, 1))`
+              return `rgba(var(--text_secondary), var(${opacityVariable}, 1))`
             }
-            return `rgb(var(--text_900))`
+            return `rgb(var(--text_secondary))`
           }
         },
       
         brand: {
-          50: '#17d4ca',
-          100: '#08ff13',
-
+          100: ({ opacityVariable, opacityValue }) => {
+            if (opacityValue !== undefined) {
+              return `rgba(var(--brand_100), ${opacityValue})`
+            }
+            if (opacityVariable !== undefined) {
+              return `rgba(var(--brand_100), var(${opacityVariable}, 1))`
+            }
+            return `rgb(var(--brand_100))`
+          },
           200: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
               return `rgba(var(--brand_200), ${opacityValue})`
@@ -68,7 +75,6 @@ module.exports = {
             }
             return `rgb(var(--brand_200))`
           },
-
           500: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
               return `rgba(var(--brand_500), ${opacityValue})`
@@ -78,7 +84,6 @@ module.exports = {
             }
             return `rgb(var(--brand_500))`
           },
-
           900: ({ opacityVariable, opacityValue }) => {
             if (opacityValue !== undefined) {
               return `rgba(var(--brand_900), ${opacityValue})`

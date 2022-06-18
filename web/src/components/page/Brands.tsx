@@ -1,6 +1,6 @@
 export function Brands() {
   return (
-    <section className="bg-brand-50 md:px-6 pb-20">
+    <section className="bg-onSurface md:px-6 pb-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center pb-10">
           <h3 className="font-bold text-brand-headline text-2xl">

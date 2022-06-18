@@ -43,9 +43,9 @@ function BackgroundThemeButton({ type, checked }: BackgroundThemeButtonProps) {
       >
         { type === 'light' 
           ? 
-            <Sun size={16} weight="fill" className={checked ? 'text-brand-50' : 'text-transparent'} /> 
+            <Sun size={16} weight="fill" className={checked ? 'text-onSurface' : 'text-transparent'} /> 
           :
-            <Moon size={16} weight="fill" className={checked ? 'text-brand-50' : 'text-transparent'} /> 
+            <Moon size={16} weight="fill" className={checked ? 'text-onSurface' : 'text-transparent'} /> 
         }
       </div>
       <div className="flex flex-1 justify-center">
@@ -78,7 +78,7 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
     <div className={`flex items-center justify-center h-11 w-11 rounded-full ${selectedColor} cursor-pointer`}>
       {
         checked &&
-        <Check size={22} weight="bold" className="text-brand-50" />
+        <Check size={22} weight="bold" className="text-onSurface" />
       }
     </div>
   )

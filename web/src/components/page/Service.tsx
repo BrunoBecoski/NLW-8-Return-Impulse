@@ -7,7 +7,7 @@ interface CardProps {
 
 function Card({ title, text }: CardProps) {
   return (
-    <div className="flex flex-col gap-4 p-6 max-w-xs rounded-md bg-brand-50 border-2 border-brand-200">
+    <div className="flex flex-col gap-4 p-6 max-w-xs rounded-md bg-onSurface border-2 border-brand-200">
       <div className="flex justify-center items-center w-6 h-6 rounded-full bg-brand-200">
         <Check weight="bold" className="text-brand-500"/>
       </div>

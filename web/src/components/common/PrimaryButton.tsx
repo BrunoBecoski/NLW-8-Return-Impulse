@@ -14,8 +14,8 @@ export function PrimaryButton({
         className={`
           flex items-center justify-center gap-4 py-4 px-8 rounded-full
           font-bold text-lg uppercase 
-        bg-brand-50 text-brand-500 border-[1px] border-brand-500 
-        hover:bg-brand-500 hover:text-brand-50 hover:border-brand-50 transition-colors
+        bg-onSurface text-brand-500 border-[1px] border-brand-500 
+        hover:bg-brand-500 hover:text-onSurface hover:border-onSurface transition-colors
           ${className}
         `}
         {...rest}
@@ -29,7 +29,7 @@ export function PrimaryButton({
         className={`
           flex items-center justify-center gap-4 py-4 px-8 rounded-full 
           font-bold text-sm uppercase 
-        bg-brand-500 text-brand-50 
+        bg-brand-500 text-onSurface
         hover:bg-brand-900 transition-colors
           ${className}
         `}

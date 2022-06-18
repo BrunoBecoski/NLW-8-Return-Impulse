@@ -66,7 +66,7 @@ export function Testimonial() {
   }, [screenWidth]);
 
   return (
-    <section id="testimonial" className="mt-5 pt-20 pb-20 bg-brand-50"> 
+    <section id="testimonial" className="mt-5 pt-20 pb-20 bg-onSurface"> 
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-14 text-center">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>

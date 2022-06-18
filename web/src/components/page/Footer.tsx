@@ -15,13 +15,13 @@ export function Footer() {
             />
           </a>
           
-          <div className="mb-8 md:mb-0 text-base md:text-sm text-brand-50">
+          <div className="mb-8 md:mb-0 text-base md:text-sm text-onSurface">
             <p className="mb-3 md:mb-4">©2021 Beautysalon.</p>
             <p> Todos os direitos reservados.</p>
           </div> 
         </div>
 
-        <ul className="flex gap-8 text-brand-50">
+        <ul className="flex gap-8 text-onSurface">
           <li className="hover:opacity-80">
             <a target="_blank" href="https://www.instagram.com">
               <InstagramLogo size={24} weight={'bold'} />

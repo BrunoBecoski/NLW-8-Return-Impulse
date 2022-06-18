@@ -31,7 +31,7 @@ export function Header() {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 max-w-xs md:max-w-none mx-auto text-center md:-mt-14 rounded-md bg-brand-50 border-2 border-brand-200">
+        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 max-w-xs md:max-w-none mx-auto text-center md:-mt-14 rounded-md bg-onSurface border-2 border-brand-200">
           <div>
             <h3 className="text-5xl font-bold text-brand-headline mb-1">+3.500</h3>
             <p className="text-brand-500">Pacientes atendidos</p>

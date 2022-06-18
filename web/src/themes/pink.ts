@@ -1,9 +1,10 @@
 import { createTheme } from './utils';
 
 const pinkTheme = createTheme({
-  // primary: '#F91880'
-  // primary: '#d63a81'
-  brand_500: '214, 58, 129'
+  brand_100: '240, 228, 233',
+  brand_200: '240, 209, 222',
+  brand_500: '219, 61, 134',
+  brand_900: '173, 24, 87'
 });
 
 export default pinkTheme;
