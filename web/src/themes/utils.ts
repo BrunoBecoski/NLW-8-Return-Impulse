@@ -12,8 +12,8 @@ interface CreateThemeProps {
   brand_900?: string;
   background_500?: string;
   background_900?: string;
-  text_primary?: string;
-  text_secondary?: string;
+  headline?: string;
+  paragraph?: string;
 }
 
 export function createTheme({
@@ -23,8 +23,8 @@ export function createTheme({
   brand_900,
   background_500,
   background_900,
-  text_secondary,
-  text_primary
+  paragraph,
+  headline
 }: CreateThemeProps) {
 
   if(brand_500) {
@@ -40,8 +40,8 @@ export function createTheme({
     return {
       "--background_500": background_500,
       "--background_900": background_900,
-      "--text_900":text_primary,
-      "--text_500":text_secondary
+      "--headline": headline,
+      "--paragraph": paragraph
     };
   }
 }

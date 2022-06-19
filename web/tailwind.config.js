@@ -1,3 +1,13 @@
+function setCssVar({opacityVariable, opacityValue, cssVarName}) {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${cssVarName}), ${opacityValue})`
+    }
+    if (opacityVariable !== undefined) {
+      return `rgba(var(${cssVarName}), var(${opacityVariable}, 1))`
+    }
+    return `rgb(var(${cssVarName}))`
+}
+
 module.exports = {
   content: ["./src/**/*.tsx"],
   darkMode: 'class',
@@ -11,8 +21,13 @@ module.exports = {
         red: '#C92A2A',
         pink: '#eb3187',
 
-
         onSurface: "#FFFFFF",
+
+        headline: ({ opacityVariable, opacityValue }) => 
+          setCssVar({ opacityVariable, opacityValue, cssVarName: '--headline'}),
+
+        paragraph: ({ opacityVariable, opacityValue }) => 
+          setCssVar({ opacityVariable, opacityValue, cssVarName: '--paragraph'}),
 
         background: {
           500: ({ opacityVariable, opacityValue }) => {
@@ -35,64 +50,15 @@ module.exports = {
           }
         },
 
-        text: {
-          primary: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--text_primary), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--text_primary), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--text_primary))`
-          },
-          secondary: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--text_secondary), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--text_secondary), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--text_secondary))`
-          }
-        },
-      
         brand: {
-          100: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--brand_100), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--brand_100), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--brand_100))`
-          },
-          200: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--brand_200), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--brand_200), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--brand_200))`
-          },
-          500: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--brand_500), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--brand_500), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--brand_500))`
-          },
-          900: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--brand_900), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--brand_900), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--brand_900))`
-          }
+          100: ({ opacityVariable, opacityValue }) => 
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--brand_100'}),
+          200: ({ opacityVariable, opacityValue }) => 
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--brand_200'}),
+          500: ({ opacityVariable, opacityValue }) => 
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--brand_500'}),
+          900: ({ opacityVariable, opacityValue }) =>
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--brand_900'}),
         }
       },
       keyframes: {

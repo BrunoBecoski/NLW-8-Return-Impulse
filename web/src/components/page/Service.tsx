@@ -11,8 +11,8 @@ function Card({ title, text }: CardProps) {
       <div className="flex justify-center items-center w-6 h-6 rounded-full bg-brand-200">
         <Check weight="bold" className="text-brand-500"/>
       </div>
-      <h3 className="font-bold text-2xl text-brand-headline">{title}</h3>
-      <p>{text}</p>
+      <h3 className="font-bold text-2xl text-headline">{title}</h3>
+      <p className="text-paragraph">{text}</p>
     </div>
   );
 }
@@ -23,7 +23,7 @@ export function Service() {
       <div className="max-w-6xl mx-auto px-6">
         <header className="px-2 text-center mb-14">
           <h4 className="font-bold text-sm uppercase text-brand-500 mb-4">Serviços</h4>
-          <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">Como podemos ajudá-lo<br className="hidden md:block" /> a se sentir melhor?</h2>
+          <h2 className="font-bold text-3xl md:text-4xl text-headline">Como podemos ajudá-lo<br className="hidden md:block" /> a se sentir melhor?</h2>
         </header>
 
         <div className="flex flex-wrap justify-center gap-8 md:gap-10"> 

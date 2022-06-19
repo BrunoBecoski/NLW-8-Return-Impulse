@@ -84,7 +84,6 @@ function ColorThemeButton({ type, checked }: ColorThemeButtonProps) {
   )
 }
 
-
 export function WidgetTheme() {
   const [backgroundTheme, setBackgroundTheme] = useState<BackgroundThemeOptions>('light');
   const [colorTheme, setColorTheme] = useState<ColorThemeOptions>('green');
@@ -123,17 +122,16 @@ export function WidgetTheme() {
     }
   }, [colorTheme])
 
-
   return(
     <div className={`bg-brand-500/50 relative rounded-2xl mb-4 flex flex-col border-8 border-brand-200 w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
-        <span className="text-brand-headline text-xl leading-6">Escolha uma tema</span>
+        <span className="text-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />
       </header>
 
       <div>
         <RadioGroup className="mb-3" value={backgroundTheme} onChange={setBackgroundTheme}>
-          <RadioGroup.Label className="text-brand-paragraph">Cor de fundo</RadioGroup.Label>
+          <RadioGroup.Label className="text-paragraph">Cor de fundo</RadioGroup.Label>
 
           <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
             <RadioGroup.Option value="light">
@@ -157,7 +155,7 @@ export function WidgetTheme() {
         </RadioGroup>
 
         <RadioGroup value={colorTheme} onChange={setColorTheme}>
-          <RadioGroup.Label className="text-brand-paragraph mb-4">Cor</RadioGroup.Label>
+          <RadioGroup.Label className="text-paragraph mb-4">Cor</RadioGroup.Label>
           
             <div className="flex flex-col md:flex-row gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
               <div className="flex justify-around md:w-1/2">

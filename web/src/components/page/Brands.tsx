@@ -3,7 +3,7 @@ export function Brands() {
     <section className="bg-onSurface md:px-6 pb-20">
       <div className="max-w-6xl mx-auto">
         <div className="text-center pb-10">
-          <h3 className="font-bold text-brand-headline text-2xl">
+          <h3 className="font-bold text-headline text-2xl">
             Empresas que confiam
           </h3>
         </div>

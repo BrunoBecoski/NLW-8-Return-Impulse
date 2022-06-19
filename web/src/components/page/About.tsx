@@ -7,10 +7,10 @@ export function About() {
         <div>
           <header className="mb-6">
             <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Sobre nós</h4>
-            <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">Entenda quem somos<br className="hidden md:block" /> e por que existimos</h2>
+            <h2 className="font-bold text-3xl md:text-4xl text-headline">Entenda quem somos<br className="hidden md:block" /> e por que existimos</h2>
           </header>
 
-          <p className="mb-14 md:mb-0">
+          <p className="mb-14 md:mb-0 text-paragraph">
             Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim. Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint.
           </p>
         </div>

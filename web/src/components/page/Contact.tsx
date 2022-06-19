@@ -10,18 +10,18 @@ export function Contact() {
       <div className="max-w-6xl mx-auto px-6 md:flex md:justify-between md:items-center">
         <div>
           <header className="mb-8 md:mb-10">
-            <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">Entre em contato<br className="hidden md:block" />  com a gente!</h2>
+            <h2 className="font-bold text-3xl md:text-4xl text-headline">Entre em contato<br className="hidden md:block" />  com a gente!</h2>
           </header>
 
           <div>
             <ul className="flex flex-col gap-4 mb-8 md:mb-10">
               <li className="flex gap-2">
                 <MapPin size={24} weight="bold" className="text-brand-500" />
-                R. Amauri Souza, 346
+                <p className="text-paragraph">R. Amauri Souza, 346</p>
               </li>
               <li className="flex gap-2">
                 <EnvelopeSimple size={24} weight="bold" className="text-brand-500"/>
-                contato@doctorcare.com
+                <p className="text-paragraph">contato@doctorcare.com</p>
               </li>
             </ul>
 

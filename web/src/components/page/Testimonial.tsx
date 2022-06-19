@@ -10,7 +10,7 @@ function Card({ text, client }: CardProps) {
   return(
     <div className="p-8 flex flex-col gap-5 bg-brand-200 w-[calc(100vw_-_3rem)]">
       <Quotes className="text-brand-500" weight="fill" size={40} />
-      <p>{text}</p>
+      <p className="text-paragraph">{text}</p>
       <div className="flex items-center gap-4 ">
         <img 
           className="w-10 h-10 rounded-full"
@@ -70,7 +70,7 @@ export function Testimonial() {
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-14 text-center">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>
-          <h2 className="font-bold text-3xl md:text-4xl text-brand-headline">O que os clientes dizem<br className="hidden md:block"/> sobre o DoctorCare</h2>
+          <h2 className="font-bold text-3xl md:text-4xl text-headline">O que os clientes dizem<br className="hidden md:block"/> sobre o DoctorCare</h2>
         </header>
         
         <div ref={carouselRef} className="flex items-center relative overflow-hidden scroll-smooth w-full">
