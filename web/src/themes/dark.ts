@@ -1,8 +1,8 @@
-import { createTheme } from './utils';
+import { createThemeBackground } from './utils';
 
-const darkTheme = createTheme({
-  background_500: '24, 24, 27',
-  background_900: '39, 39, 42',
+const darkTheme = createThemeBackground({
+  background_primary: '24, 24, 27',
+  background_secondary: '39, 39, 42',
   headline: '244, 244, 245',
   paragraph: '161, 161, 170'
 });

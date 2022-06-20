@@ -5,43 +5,44 @@ export function applyTheme(theme: any) {
   })
 }
 
-interface CreateThemeProps {
-  brand_100?: string;
-  brand_200?: string;
-  brand_500?: string;
-  brand_900?: string;
-  background_500?: string;
-  background_900?: string;
-  headline?: string;
-  paragraph?: string;
+interface CreateThemeBackgroundProps {
+  background_primary: string;
+  background_secondary: string;
+  headline: string;
+  paragraph: string;
 }
 
-export function createTheme({
+interface CreateThemeColorProps {
+  brand_100: string;
+  brand_200: string;
+  brand_500: string;
+  brand_900: string;
+}
+
+export function createThemeBackground({
+  background_primary,
+  background_secondary,
+  paragraph,
+  headline
+}: CreateThemeBackgroundProps) {
+  return {
+    "--background_primary": background_primary,
+    "--background_secondary": background_secondary,
+    "--headline": headline,
+    "--paragraph": paragraph
+  };
+}
+
+export function createThemeColor({
   brand_100,
   brand_200,
   brand_500,
-  brand_900,
-  background_500,
-  background_900,
-  paragraph,
-  headline
-}: CreateThemeProps) {
-
-  if(brand_500) {
-    return {
-      "--brand_100": brand_100,
-      "--brand_200": brand_200,
-      "--brand_500": brand_500,
-      "--brand_900": brand_900
-    };
-  }
-  
-  if(background_500) {
-    return {
-      "--background_500": background_500,
-      "--background_900": background_900,
-      "--headline": headline,
-      "--paragraph": paragraph
-    };
-  }
+  brand_900
+}: CreateThemeColorProps) {
+  return {
+    "--brand_100": brand_100,
+    "--brand_200": brand_200,
+    "--brand_500": brand_500,
+    "--brand_900": brand_900
+  };
 }

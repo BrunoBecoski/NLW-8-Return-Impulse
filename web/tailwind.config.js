@@ -21,6 +21,9 @@ module.exports = {
         red: '#C92A2A',
         pink: '#eb3187',
 
+        backgroundLight: "#FFFFFF",
+        backgroundDark: "#18181b",
+
         onSurface: "#FFFFFF",
 
         headline: ({ opacityVariable, opacityValue }) => 
@@ -30,24 +33,10 @@ module.exports = {
           setCssVar({ opacityVariable, opacityValue, cssVarName: '--paragraph'}),
 
         background: {
-          500: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--background_500), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--background_500), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--background_500))`
-          },
-          900: ({ opacityVariable, opacityValue }) => {
-            if (opacityValue !== undefined) {
-              return `rgba(var(--background_900), ${opacityValue})`
-            }
-            if (opacityVariable !== undefined) {
-              return `rgba(var(--background_900), var(${opacityVariable}, 1))`
-            }
-            return `rgb(var(--background_900))`
-          }
+          primary: ({ opacityVariable, opacityValue }) => 
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--background_primary'}),
+          secondary: ({ opacityVariable, opacityValue }) => 
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--background_secondary'}),
         },
 
         brand: {

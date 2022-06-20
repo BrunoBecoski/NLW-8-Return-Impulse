@@ -33,12 +33,12 @@ function BackgroundThemeButton({ type, checked }: BackgroundThemeButtonProps) {
     <div 
       className={`flex justify-center items-center p-3 border-2 md:w-44 rounded-full cursor-pointer
         ${checked && 'border-brand-500'}
-        ${type === 'light' ? 'bg-white' : 'bg-black'}
+        ${type === 'light' ? 'bg-backgroundLight' : 'bg-backgroundDark'}
       `}
     >
       <div 
         className={`flex justify-center items-center h-6 w-6 rounded-full border-2
-          ${checked ? 'bg-brand-500 border-brand-500' : 'border-gray-500'}
+          ${checked ? 'bg-brand-500 border-brand-500' : 'border-background-secondary'}
         `}
       >
         { type === 'light' 
@@ -49,9 +49,8 @@ function BackgroundThemeButton({ type, checked }: BackgroundThemeButtonProps) {
         }
       </div>
       <div className="flex flex-1 justify-center">
-
         <p className={
-            checked ? 'text-brand-500 font-bold' : 'text-gray-500'
+            checked ? 'text-brand-500 font-bold' : 'text-background-secondary'
           }
         >
           Tema {type === 'light' ? 'claro' : 'escuro'}
@@ -123,7 +122,7 @@ export function WidgetTheme() {
   }, [colorTheme])
 
   return(
-    <div className={`bg-brand-500/50 relative rounded-2xl mb-4 flex flex-col border-8 border-brand-200 w-[calc(100vw-2rem)] md:max-w-md`}>
+    <div className={`bg-background-primary relative rounded-2xl mb-4 p-4 flex flex-col w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
         <span className="text-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />
@@ -133,7 +132,7 @@ export function WidgetTheme() {
         <RadioGroup className="mb-3" value={backgroundTheme} onChange={setBackgroundTheme}>
           <RadioGroup.Label className="text-paragraph">Cor de fundo</RadioGroup.Label>
 
-          <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
+          <div className="flex flex-col md:flex-row md:justify-between gap-4 md:gap-0 rounded-md mt-2 p-2 md:p-4 bg-background-secondary">
             <RadioGroup.Option value="light">
               {({ checked }) => (
                 <BackgroundThemeButton 
@@ -157,7 +156,7 @@ export function WidgetTheme() {
         <RadioGroup value={colorTheme} onChange={setColorTheme}>
           <RadioGroup.Label className="text-paragraph mb-4">Cor</RadioGroup.Label>
           
-            <div className="flex flex-col md:flex-row gap-4 md:gap-0 rounded-md mt-2 p-2 bg-brand-100">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-0 rounded-md mt-2 p-2 md:p-4 bg-background-secondary">
               <div className="flex justify-around md:w-1/2">
                 <RadioGroup.Option value="green">
                   {({ checked }) => (

@@ -1,6 +1,6 @@
-import { createTheme } from './utils';
+import { createThemeColor } from './utils';
 
-const greenTheme = createTheme({
+const greenTheme = createThemeColor({
   brand_100: '247, 249, 249',
   brand_200: '220, 233, 226',
   brand_500: '0, 133, 111',
