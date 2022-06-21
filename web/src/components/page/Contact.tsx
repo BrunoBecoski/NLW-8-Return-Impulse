@@ -6,7 +6,7 @@ import menImageUrl from '../../assets/men.png';
 
 export function Contact() {
   return(
-    <section id="contact" className="py-20 bg-onSurface">
+    <section id="contact" className="py-20 bg-surface-primary">
       <div className="max-w-6xl mx-auto px-6 md:flex md:justify-between md:items-center">
         <div>
           <header className="mb-8 md:mb-10">

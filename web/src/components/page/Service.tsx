@@ -7,7 +7,7 @@ interface CardProps {
 
 function Card({ title, text }: CardProps) {
   return (
-    <div className="flex flex-col gap-4 p-6 max-w-xs rounded-md bg-onSurface border-2 border-brand-200">
+    <div className="flex flex-col gap-4 p-6 max-w-xs rounded-md bg-surface-secondary border-2 border-brand-200">
       <div className="flex justify-center items-center w-6 h-6 rounded-full bg-brand-200">
         <Check weight="bold" className="text-brand-500"/>
       </div>
@@ -19,7 +19,7 @@ function Card({ title, text }: CardProps) {
 
 export function Service() {
   return (
-    <section id="service" className="mt-5 pt-20 pb-20">
+    <section id="service" className="mt-5 pt-20 pb-20 bg-surface-primary">
       <div className="max-w-6xl mx-auto px-6">
         <header className="px-2 text-center mb-14">
           <h4 className="font-bold text-sm uppercase text-brand-500 mb-4">Serviços</h4>

@@ -5,9 +5,9 @@ export function applyTheme(theme: any) {
   })
 }
 
-interface CreateThemeBackgroundProps {
-  background_primary: string;
-  background_secondary: string;
+interface CreateThemeSurfaceProps {
+  surface_primary: string;
+  surface_secondary: string;
   headline: string;
   paragraph: string;
 }
@@ -19,15 +19,15 @@ interface CreateThemeColorProps {
   brand_900: string;
 }
 
-export function createThemeBackground({
-  background_primary,
-  background_secondary,
+export function createThemeSurface({
+  surface_primary,
+  surface_secondary,
   paragraph,
   headline
-}: CreateThemeBackgroundProps) {
+}: CreateThemeSurfaceProps) {
   return {
-    "--background_primary": background_primary,
-    "--background_secondary": background_secondary,
+    "--surface_primary": surface_primary,
+    "--surface_secondary": surface_secondary,
     "--headline": headline,
     "--paragraph": paragraph
   };

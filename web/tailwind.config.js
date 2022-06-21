@@ -32,11 +32,11 @@ module.exports = {
         paragraph: ({ opacityVariable, opacityValue }) => 
           setCssVar({ opacityVariable, opacityValue, cssVarName: '--paragraph'}),
 
-        background: {
+        surface: {
           primary: ({ opacityVariable, opacityValue }) => 
-            setCssVar({ opacityVariable, opacityValue, cssVarName: '--background_primary'}),
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--surface_primary'}),
           secondary: ({ opacityVariable, opacityValue }) => 
-            setCssVar({ opacityVariable, opacityValue, cssVarName: '--background_secondary'}),
+            setCssVar({ opacityVariable, opacityValue, cssVarName: '--surface_secondary'}),
         },
 
         brand: {

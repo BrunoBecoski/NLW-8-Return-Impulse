@@ -8,7 +8,7 @@ interface CardProps {
 
 function Card({ text, client }: CardProps) {
   return(
-    <div className="p-8 flex flex-col gap-5 bg-brand-200 w-[calc(100vw_-_3rem)]">
+    <div className="p-8 flex flex-col gap-5 bg-brand-500/10 w-[calc(100vw_-_3rem)]">
       <Quotes className="text-brand-500" weight="fill" size={40} />
       <p className="text-paragraph">{text}</p>
       <div className="flex items-center gap-4 ">
@@ -66,7 +66,7 @@ export function Testimonial() {
   }, [screenWidth]);
 
   return (
-    <section id="testimonial" className="mt-5 pt-20 pb-20 bg-onSurface"> 
+    <section id="testimonial" className="pt-20 pb-20 bg-surface-primary"> 
       <div className="max-w-6xl mx-auto px-6">
         <header className="mb-14 text-center">
           <h4 className="font-bold text-sm text-brand-500 uppercase mb-4">Depoimentos</h4>

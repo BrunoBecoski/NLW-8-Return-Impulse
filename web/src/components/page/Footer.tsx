@@ -4,7 +4,7 @@ import logoOnSurfaceUrl from '../../assets/logoOnSurface.svg';
 
 export function Footer() {
   return(
-    <footer className="bg-brand-500">
+    <footer className="bg-brand-500/50">
       <div className="max-w-6xl mx-auto px-6 py-20 md:flex md:items-center md:justify-between">
         <div>
           <a href="#">
