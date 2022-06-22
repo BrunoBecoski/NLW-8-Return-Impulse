@@ -11,7 +11,7 @@ export function Header() {
   }
 
   return (
-    <header id="header" className="pt-10 before:w-full before:h-[1080px] md:before:h-[678px] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-brand-200">
+    <header id="header" className="pt-10 before:w-full before:h-[1080px] md:before:h-[678px] before:absolute before:top-0 before:left-0 before:-z-10 before:bg-brand-500/30">
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex flex-col md:flex-row">
           <div className="flex flex-col items-center md:items-start justify-center text-center md:text-left">
@@ -31,17 +31,17 @@ export function Header() {
           />
         </div>
 
-        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 max-w-xs md:max-w-none mx-auto text-center md:-mt-14 rounded-md bg-surface-secondary border-2 border-brand-200">
+        <div className="flex flex-col md:flex-row justify-between gap-14 py-10 md:py-14 px-16 md:px-28 max-w-xs md:max-w-none mx-auto text-center md:-mt-14 rounded-md bg-surface-secondary border-2 border-stroke">
           <div>
             <h3 className="text-5xl font-bold text-headline mb-1">+3.500</h3>
             <p className="text-brand-500">Pacientes atendidos</p>
           </div>
-          <span className="md:h-20 md:w-px bg-brand-200" />
+          <span className="md:h-20 md:w-px bg-brand-500/50" />
           <div>
             <h3 className="text-5xl font-bold text-headline mb-1">+15</h3>
             <p className="text-brand-500">Especialistas disponíveis</p>
           </div>
-          <span className="md:h-20 md:w-px bg-brand-200" />
+          <span className="md:h-20 md:w-px bg-brand-500/50" />
           <div>
             <h3 className="text-5xl font-bold text-headline mb-1">+10</h3>
             <p className="text-brand-500">Anos no mercado</p>

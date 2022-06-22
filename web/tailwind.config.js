@@ -26,11 +26,6 @@ module.exports = {
 
         onSurface: "#FFFFFF",
 
-        headline: ({ opacityVariable, opacityValue }) => 
-          setCssVar({ opacityVariable, opacityValue, cssVarName: '--headline'}),
-
-        paragraph: ({ opacityVariable, opacityValue }) => 
-          setCssVar({ opacityVariable, opacityValue, cssVarName: '--paragraph'}),
 
         surface: {
           primary: ({ opacityVariable, opacityValue }) => 
@@ -38,6 +33,15 @@ module.exports = {
           secondary: ({ opacityVariable, opacityValue }) => 
             setCssVar({ opacityVariable, opacityValue, cssVarName: '--surface_secondary'}),
         },
+
+        stroke: ({ opacityVariable, opacityValue }) =>
+          setCssVar({ opacityVariable, opacityValue, cssVarName: '--stroke' }),
+
+        headline: ({ opacityVariable, opacityValue }) => 
+          setCssVar({ opacityVariable, opacityValue, cssVarName: '--headline'}),
+
+        paragraph: ({ opacityVariable, opacityValue }) => 
+          setCssVar({ opacityVariable, opacityValue, cssVarName: '--paragraph'}),
 
         brand: {
           100: ({ opacityVariable, opacityValue }) => 

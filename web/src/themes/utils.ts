@@ -8,6 +8,7 @@ export function applyTheme(theme: any) {
 interface CreateThemeSurfaceProps {
   surface_primary: string;
   surface_secondary: string;
+  stroke: string;
   headline: string;
   paragraph: string;
 }
@@ -22,12 +23,14 @@ interface CreateThemeColorProps {
 export function createThemeSurface({
   surface_primary,
   surface_secondary,
+  stroke,
   paragraph,
   headline
 }: CreateThemeSurfaceProps) {
   return {
     "--surface_primary": surface_primary,
     "--surface_secondary": surface_secondary,
+    "--stroke": stroke,
     "--headline": headline,
     "--paragraph": paragraph
   };

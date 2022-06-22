@@ -6,7 +6,7 @@ import { WidgetTheme } from './WidgetTheme';
 
 export function Widget() {
   return (
-    <Popover className="fixed flex items-center justify-center bottom-4 left-4 md:bottom-8 md:left-8 p-3 rounded-full bg-brand-500 text-onSurface border-2 border-onSurface transition-transform duration-1000">
+    <Popover className="fixed flex items-center justify-center bottom-4 left-4 md:bottom-8 md:left-8 p-3 rounded-full bg-brand-500 text-onSurface border-2 border-stroke transition-transform duration-1000">
       {({ open }) => (<>
         <Popover.Button>
           <GearSix

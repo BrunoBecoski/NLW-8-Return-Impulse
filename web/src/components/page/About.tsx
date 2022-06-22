@@ -2,7 +2,7 @@ import doctorImageUrl from '../../assets/doctor.png';
 
 export function About() {
   return (
-    <section id="about" className="py-20 bg-surface-secondary">
+    <section id="about" className="py-20 bg-brand-500/10">
       <div className="max-w-6xl mx-auto px-6 md:flex md:items-center md:flex-row-reverse md:gap-16">
         <div>
           <header className="mb-6">

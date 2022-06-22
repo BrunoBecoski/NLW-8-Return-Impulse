@@ -122,7 +122,7 @@ export function WidgetTheme() {
   }, [colorTheme])
 
   return(
-    <div className={`bg-surface-primary relative rounded-2xl mb-4 p-4 flex flex-col w-[calc(100vw-2rem)] md:max-w-md`}>
+    <div className={`bg-surface-primary relative rounded-2xl mb-4 p-4 flex flex-col border-2 border-stroke w-[calc(100vw-2rem)] md:max-w-md`}>
       <header className="mb-4">
         <span className="text-headline text-xl leading-6">Escolha uma tema</span>
         <CloseButton />
